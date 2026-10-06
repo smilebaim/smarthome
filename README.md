@@ -1,36 +1,45 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# NexaHome — Teknologi Rumah Pintar Modern
 
-## Getting Started
+Website showcase konsep teknologi smart home modern: perangkat pintar untuk membangun rumah cerdas, protokol jaringan (Wi-Fi, Zigbee, Z-Wave, Matter/Thread, Bluetooth), dan panduan membangun rumah pintar langkah demi langkah.
 
-First, run the development server:
+Dibangun dengan [Next.js](https://nextjs.org) (App Router) + [Tailwind CSS](https://tailwindcss.com) + [lucide-react](https://lucide.dev).
+
+## Fitur Halaman
+
+- **Hero interaktif** — mockup dashboard kontrol rumah pintar dengan animasi
+- **Keunggulan** — 6 manfaat utama smart home
+- **Katalog 15 perangkat** — dengan filter kategori (Keamanan, Pencahayaan, Energi, Kontrol & Kenyamanan, Rumah Tangga)
+- **Protokol jaringan** — penjelasan Wi-Fi, Zigbee, Z-Wave, Matter/Thread, dan Bluetooth BLE
+- **Panduan 4 langkah** — dari audit rumah hingga otomasi penuh
+- Desain responsif, dark theme berteknologi, animasi scroll reveal
+
+## Menjalankan Secara Lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Build Produksi
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Deploy ke Vercel
 
-To learn more about Next.js, take a look at the following resources:
+Cara termudah — push repo ini ke GitHub, lalu:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Buka [vercel.com/new](https://vercel.com/new)
+2. Import repository GitHub ini
+3. Klik **Deploy** (tanpa konfigurasi tambahan — framework Next.js terdeteksi otomatis)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Atau via Vercel CLI:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm i -g vercel
+vercel
+```

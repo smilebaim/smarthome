@@ -11,6 +11,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#05070f",
+  colorScheme: "dark",
+};
+
 export const metadata = {
   title: "NexaHome — Teknologi Rumah Pintar Modern",
   description:

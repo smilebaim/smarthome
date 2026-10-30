@@ -6,8 +6,9 @@ Dibangun dengan [Next.js](https://nextjs.org) (App Router) + [Tailwind CSS](http
 
 ## Fitur Halaman
 
-- **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll (tanpa overflow di 375×667 hingga 1920×1080; pada layar sangat kecil atau posisi landscape konten dapat digulir), navigasi via tab (desktop: navbar atas 8 tab, mobile: menu bawah 6 item + sheet "Semua Halaman")
-- **Responsif di semua ukuran** — kartu berubah dari karusel geser di ponsel, grid 2 kolom di tablet, hingga grid 3–4 kolom di desktop; paginasi perangkat menyesuaikan lebar layar (6 per halaman di tablet, 8 di desktop)
+- **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll (tanpa overflow di 320×568 hingga 1920×1080; pada posisi landscape konten dapat digulir), navigasi via tab (desktop: navbar atas 8 tab, mobile: menu bawah 6 item + sheet "Semua Halaman")
+- **Responsif di semua ukuran** — ponsel memakai karusel geser dengan tepi memudar dan tipografi fluid (clamp), layar 640–767 px memakai grid 3 kolom, tablet grid 2 kolom, desktop grid 3–4 kolom; paginasi perangkat menyesuaikan lebar layar (6 per halaman di tablet, 8 di desktop), modal detail menjadi bottom sheet penuh dengan area aman iPhone
+- **Ramah genggam** — target sentuh ≥ 44 px, safe-area notch/home-indicator, header & navigasi dipadatkan otomatis di layar pendek/landscape
 - **Beranda interaktif** — mockup dashboard kontrol rumah pintar, kartu statistik yang bisa diklik menuju halaman terkait
 - **Keunggulan** — 6 manfaat utama smart home (karusel geser di mobile)
 - **Katalog 20 perangkat** — filter 6 kategori (Keamanan, Pencahayaan, Energi & Iklim, Kontrol, Rumah Tangga, Infrastruktur), paginasi di desktop, serta modal detail berisi kisaran harga, daya, cara pemasangan, ruangan ideal, dan tips

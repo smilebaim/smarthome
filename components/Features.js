@@ -67,11 +67,11 @@ export default function Features() {
           description="Rumah pintar modern menyatukan perangkat agar bekerja otomatis untuk kenyamanan, keamanan, dan penghematan Anda."
         />
 
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-center gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:items-stretch sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3 lg:gap-5">
+        <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-center gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-3 sm:items-stretch md:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3 lg:gap-5">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className="glass group relative flex w-[78%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto lg:p-5"
+              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto lg:p-5"
               style={{ animation: `fade-up 0.5s ease-out ${i * 60}ms both` }}
             >
               <div
@@ -92,7 +92,7 @@ export default function Features() {
           ))}
         </div>
 
-        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:600px)]:hidden">
           Geser kartu untuk melihat lainnya &rarr;
         </p>
       </div>

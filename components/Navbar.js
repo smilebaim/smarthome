@@ -15,11 +15,11 @@ const tabs = [
 
 export default function Navbar({ active, onNavigate }) {
   return (
-    <header className="z-40 shrink-0 border-b border-white/10 bg-[#05070f]/85 backdrop-blur-xl">
-      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 lg:px-8">
+    <header className="z-40 shrink-0 border-b border-white/10 bg-[#05070f]/85 pt-[env(safe-area-inset-top)] backdrop-blur-xl">
+      <nav className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 sm:h-16 lg:px-8 [@media(max-height:500px)]:h-12">
         <button
           onClick={() => onNavigate("beranda")}
-          className="flex shrink-0 items-center gap-2.5"
+          className="flex shrink-0 items-center gap-2.5 rounded-xl transition active:opacity-75"
           aria-label="NexaHome — kembali ke beranda"
         >
           <span className="grid size-8 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-violet-600 shadow-lg shadow-cyan-500/25 sm:size-9">

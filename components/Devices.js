@@ -352,13 +352,13 @@ export default function Devices() {
           description="20 perangkat paling sering dipakai — lengkap dengan kisaran harga, kebutuhan daya, dan cara pemasangan."
         />
 
-        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
+        <div className="no-scrollbar swipe-fade -mx-4 flex scroll-px-4 gap-2 overflow-x-auto px-4 py-0.5 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
           {categories.map((c) => (
             <button
               key={c.key}
               onClick={() => changeCategory(c.key)}
               aria-pressed={active === c.key}
-              className={`shrink-0 rounded-full px-3.5 py-1 text-xs font-medium transition sm:py-1.5 ${
+              className={`inline-flex min-h-[34px] shrink-0 items-center rounded-full px-3.5 py-1.5 text-xs font-medium transition active:scale-95 sm:py-1.5 ${
                 active === c.key
                   ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-[#05070f] shadow-lg shadow-cyan-500/25"
                   : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-400/30 hover:text-white"
@@ -370,12 +370,12 @@ export default function Devices() {
         </div>
 
         {/* Mobile: swipe carousel */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:hidden">
+        <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:hidden">
           {filtered.map((d, i) => (
             <button
               key={d.name}
               onClick={() => setDetail(d)}
-              className="glass group relative flex w-[78%] shrink-0 snap-center flex-col rounded-2xl p-3 text-left transition active:scale-[0.99] sm:p-4"
+              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col rounded-2xl p-3.5 text-left transition active:scale-[0.99]"
               style={{ animation: `fade-up 0.4s ease-out ${Math.min(i, 8) * 45}ms both` }}
             >
               <div className="flex items-start justify-between gap-2">
@@ -394,7 +394,17 @@ export default function Devices() {
               <p className="mt-1.5 text-xs leading-relaxed text-slate-400 line-clamp-2">
                 {d.desc}
               </p>
-              <div className="mt-3 flex items-center justify-between border-t border-white/[0.06] pt-2.5">
+              <div className="mt-2 flex flex-wrap gap-1">
+                {d.tags.map((t) => (
+                  <span
+                    key={t}
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 font-mono text-[9.5px] text-slate-400"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-2.5 flex items-center justify-between border-t border-white/[0.06] pt-2.5">
                 <span className="text-xs font-semibold text-cyan-300">{d.price}</span>
                 <span className="flex items-center gap-1 text-[11px] text-slate-500">
                   Detail <ArrowRight className="size-3" />
@@ -406,7 +416,7 @@ export default function Devices() {
 
         {/* Tablet & desktop: paginated grid */}
         <div className="hidden sm:block">
-          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4">
             {visible.map((d, i) => (
               <button
                 key={d.name}
@@ -482,9 +492,18 @@ export default function Devices() {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:600px)]:hidden">
           Geser kartu, ketuk untuk melihat detail &rarr;
         </p>
+
+        <div className="hidden items-start gap-2 rounded-xl border border-cyan-400/15 bg-cyan-400/[0.05] px-3 py-2.5 sm:hidden [@media(min-height:800px)]:flex">
+          <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-300" />
+          <p className="text-[11px] leading-relaxed text-slate-400">
+            <span className="font-semibold text-slate-200">Mulai kecil:</span> smart
+            hub + 2 lampu pintar + 1 sensor pintu, sekitar{" "}
+            <span className="text-cyan-300">Rp 1,8 jt</span>.
+          </p>
+        </div>
       </div>
 
       {detail && <DetailModal device={detail} onClose={() => setDetail(null)} />}
@@ -512,70 +531,74 @@ function DetailModal({ device: d, onClose }) {
         role="dialog"
         aria-modal="true"
         aria-label={`Detail ${d.name}`}
-        className="animate-sheet-up relative max-h-[85dvh] w-full overflow-y-auto rounded-t-3xl border border-white/10 bg-[#0a0f1e] p-5 shadow-2xl sm:animate-modal-in sm:max-w-lg sm:rounded-3xl"
+        className="animate-sheet-up relative flex max-h-[92dvh] w-full flex-col overflow-hidden rounded-t-3xl border border-white/10 bg-[#0a0f1e] shadow-2xl sm:animate-modal-in sm:max-h-[85dvh] sm:max-w-lg sm:rounded-3xl"
       >
-        <div className="mx-auto mb-4 h-1 w-10 rounded-full bg-white/15 sm:hidden" />
-        <div className="flex items-start justify-between gap-3">
-          <div className="flex items-center gap-3">
-            <span className="grid size-12 place-items-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/25">
-              <d.icon className="size-6 text-[#05070f]" strokeWidth={2} />
-            </span>
-            <div>
-              <span
-                className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${
-                  categoryBadge[d.cat]
-                }`}
-              >
-                {catLabel}
+        <div className="shrink-0 border-b border-white/[0.07] px-4 pb-3 pt-2.5 sm:border-0 sm:px-5 sm:pb-0 sm:pt-5">
+          <div className="mx-auto mb-3 h-1 w-10 rounded-full bg-white/15 sm:hidden" />
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex min-w-0 items-center gap-3">
+              <span className="grid size-11 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-600 shadow-lg shadow-cyan-500/25 sm:size-12">
+                <d.icon className="size-5 text-[#05070f] sm:size-6" strokeWidth={2} />
               </span>
-              <h3 className="mt-1 text-lg font-semibold leading-tight text-white">
-                {d.name}
-              </h3>
-            </div>
-          </div>
-          <button
-            onClick={onClose}
-            aria-label="Tutup"
-            className="grid size-8 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-400 transition hover:text-white"
-          >
-            <X className="size-4" />
-          </button>
-        </div>
-
-        <p className="mt-3 text-sm leading-relaxed text-slate-300">{d.desc}</p>
-
-        <div className="mt-4 grid grid-cols-2 gap-2">
-          {specs.map((s) => (
-            <div
-              key={s.label}
-              className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-2.5"
-            >
-              <div className="flex items-center gap-1.5 text-[10px] uppercase tracking-wide text-slate-500">
-                <s.icon className="size-3" /> {s.label}
+              <div className="min-w-0">
+                <span
+                  className={`rounded-full border px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide ${
+                    categoryBadge[d.cat]
+                  }`}
+                >
+                  {catLabel}
+                </span>
+                <h3 className="mt-1 text-[17px] font-semibold leading-tight text-white sm:text-lg">
+                  {d.name}
+                </h3>
               </div>
-              <p className="mt-1 text-[12px] font-medium leading-snug text-slate-200">
-                {s.value}
-              </p>
             </div>
-          ))}
-        </div>
-
-        <div className="mt-3 rounded-xl border border-amber-400/20 bg-amber-400/[0.06] p-3">
-          <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-300">
-            <BatteryCharging className="size-3" /> Tips pemasangan
-          </div>
-          <p className="mt-1 text-xs leading-relaxed text-slate-300">{d.tip}</p>
-        </div>
-
-        <div className="mt-3 flex flex-wrap items-center gap-1.5">
-          {d.tags.map((t) => (
-            <span
-              key={t}
-              className="flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-slate-400"
+            <button
+              onClick={onClose}
+              aria-label="Tutup"
+              className="grid size-10 shrink-0 place-items-center rounded-full border border-white/10 bg-white/[0.05] text-slate-400 transition active:bg-white/10 sm:size-8"
             >
-              <Check className="size-2.5 text-cyan-400" /> {t}
-            </span>
-          ))}
+              <X className="size-4" />
+            </button>
+          </div>
+        </div>
+
+        <div className="no-scrollbar overflow-y-auto overscroll-contain px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 sm:px-5 sm:pb-5 sm:pt-0">
+          <p className="text-[13px] leading-relaxed text-slate-300 sm:text-sm">{d.desc}</p>
+
+          <div className="mt-3.5 grid grid-cols-2 gap-2 sm:mt-4">
+            {specs.map((s) => (
+              <div
+                key={s.label}
+                className="rounded-xl border border-white/[0.08] bg-white/[0.03] p-2.5"
+              >
+                <div className="flex items-center gap-1.5 text-[9.5px] uppercase tracking-wide text-slate-500">
+                  <s.icon className="size-3 shrink-0" /> {s.label}
+                </div>
+                <p className="mt-1 text-[11.5px] font-medium leading-snug text-slate-200 sm:text-[12px]">
+                  {s.value}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-3 rounded-xl border border-amber-400/20 bg-amber-400/[0.06] p-3">
+            <div className="flex items-center gap-1.5 text-[10px] font-semibold uppercase tracking-wide text-amber-300">
+              <BatteryCharging className="size-3" /> Tips pemasangan
+            </div>
+            <p className="mt-1 text-xs leading-relaxed text-slate-300">{d.tip}</p>
+          </div>
+
+          <div className="mt-3 flex flex-wrap items-center gap-1.5 pb-1">
+            {d.tags.map((t) => (
+              <span
+                key={t}
+                className="flex items-center gap-1 rounded-md border border-white/10 bg-white/[0.03] px-2 py-1 font-mono text-[10px] text-slate-400"
+              >
+                <Check className="size-2.5 text-cyan-400" /> {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </div>

@@ -15,8 +15,8 @@ const sheetPages = ["protokol", "ekosistem", "kontak", "fitur"];
 
 export default function MobileNav({ active, onNavigate, onOpenMenu }) {
   return (
-    <nav className="z-40 shrink-0 border-t border-white/10 bg-[#05070f]/90 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl md:hidden">
-      <div className="grid grid-cols-6">
+    <nav className="z-40 shrink-0 border-t border-white/10 bg-[#05070f]/92 pb-[max(env(safe-area-inset-bottom),0.25rem)] backdrop-blur-xl md:hidden">
+      <div className="mx-auto grid max-w-md grid-cols-6 gap-0.5 px-1.5 pt-1">
         {items.map((it) => {
           const isMenu = it.action === "menu";
           const isActive = isMenu
@@ -29,21 +29,21 @@ export default function MobileNav({ active, onNavigate, onOpenMenu }) {
                 isMenu ? onOpenMenu() : onNavigate(it.id)
               }
               aria-current={isActive ? "page" : undefined}
-              className="flex flex-col items-center gap-0.5 py-2 sm:gap-1 sm:py-2.5"
+              className="flex min-h-[46px] flex-col items-center justify-center gap-0.5 rounded-xl py-1 transition active:scale-95 active:bg-white/[0.05] sm:min-h-[52px] [@media(max-height:500px)]:min-h-[40px] [@media(max-height:500px)]:py-0.5"
             >
               <span
-                className={`relative grid size-8 place-items-center rounded-lg transition ${
+                className={`relative grid size-8 place-items-center rounded-lg transition [@media(max-height:500px)]:size-7 ${
                   isActive ? "bg-cyan-400/15 text-cyan-300" : "text-slate-500"
                 }`}
               >
-                <it.icon className="size-4.5" />
+                <it.icon className="size-[18px]" strokeWidth={isActive ? 2.2 : 1.9} />
                 {isMenu && isActive ? (
                   <span className="absolute -top-0.5 right-0.5 size-1.5 rounded-full bg-cyan-300" />
                 ) : null}
               </span>
               <span
-                className={`text-[9px] font-medium ${
-                  isActive ? "text-cyan-300" : "text-slate-500"
+                className={`text-[10px] leading-none [@media(max-height:500px)]:hidden ${
+                  isActive ? "font-semibold text-cyan-300" : "font-medium text-slate-500"
                 }`}
               >
                 {it.label}

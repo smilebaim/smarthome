@@ -3,7 +3,7 @@ const puppeteer = require("puppeteer-core");
 const path = require("path");
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
-const BASE = "http://localhost:3005";
+const BASE = process.env.SHOT_BASE || "http://localhost:3005";
 const OUT = path.join(__dirname, "..");
 
 const clickText = (text) => async (page) => {
@@ -55,6 +55,8 @@ const shots = [
   { name: "preview-tablet-fitur", url: "/#fitur", vw: 768, vh: 1024 },
   { name: "preview-laptop-1280", url: "/#perangkat", vw: 1280, vh: 720 },
   { name: "preview-mobile-360", url: "/", vw: 360, vh: 640, mobile: true },
+  { name: "preview-mobile-320", url: "/", vw: 320, vh: 568, mobile: true },
+  { name: "preview-mobile-430", url: "/#perangkat", vw: 430, vh: 932, mobile: true },
   { name: "preview-mobile", url: "/", vw: 390, vh: 844, mobile: true },
   { name: "preview-mobile-perangkat", url: "/#perangkat", vw: 390, vh: 844, mobile: true },
   {

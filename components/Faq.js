@@ -43,7 +43,9 @@ export default function Faq({ onNavigate }) {
   const [open, setOpen] = useState(-1);
 
   useEffect(() => {
-    if (window.matchMedia("(min-width: 640px)").matches) setOpen(0);
+    if (!window.matchMedia("(min-width: 640px)").matches) return;
+    const t = setTimeout(() => setOpen(0), 0);
+    return () => clearTimeout(t);
   }, []);
 
   return (
@@ -80,20 +82,20 @@ export default function Faq({ onNavigate }) {
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left sm:py-2.5"
+                  className="flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left active:bg-white/[0.03] sm:py-2.5"
                 >
-                  <span className="flex items-start gap-2 text-[11.5px] font-medium leading-snug text-white">
+                  <span className="flex items-start gap-2 text-[11.5px] font-medium leading-snug text-white min-[360px]:text-[12px] sm:text-[12.5px]">
                     <HelpCircle className="mt-0.5 size-3.5 shrink-0 text-cyan-400/70" />
                     {f.q}
                   </span>
                   <ChevronDown
-                    className={`size-3.5 shrink-0 text-slate-500 transition-transform duration-300 ${
+                    className={`size-4 shrink-0 text-slate-500 transition-transform duration-300 ${
                       isOpen ? "rotate-180 text-cyan-300" : ""
                     }`}
                   />
                 </button>
                 {isOpen && (
-                  <p className="animate-page-in px-3.5 pb-3 pl-9 text-[11px] leading-relaxed text-slate-400">
+                  <p className="animate-page-in px-3.5 pb-3 pl-9 text-[11.5px] leading-relaxed text-slate-400">
                     {f.a}
                   </p>
                 )}

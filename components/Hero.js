@@ -34,46 +34,46 @@ export default function Hero({ onNavigate }) {
         <div className="absolute bottom-[-100px] right-[-120px] h-[300px] w-[300px] rounded-full bg-violet-600/15 blur-[110px]" />
       </div>
 
-      <div className="relative mx-auto grid min-h-full w-full max-w-7xl content-center gap-6 px-4 py-4 sm:px-5 sm:py-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
+      <div className="relative mx-auto grid min-h-full w-full max-w-7xl content-center gap-5 px-4 py-4 sm:gap-6 sm:px-5 sm:py-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
         <div className="animate-fade-up-delay-1 flex flex-col items-center text-center lg:items-start lg:text-left">
           <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3.5 py-1.5 text-[11px] font-medium text-cyan-300 sm:text-xs">
             <Sparkles className="size-3.5" />
             Teknologi Rumah Modern &middot; Era IoT 2026
           </div>
 
-          <h1 className="mt-3 text-[27px] font-bold leading-[1.1] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[2.7rem]">
+          <h1 className="mt-3 text-[clamp(24px,7vw,28px)] font-bold leading-[1.12] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[2.7rem]">
             Ubah Rumah Biasa Menjadi{" "}
             <span className="text-gradient">Rumah Pintar</span> Masa Depan
           </h1>
 
-          <p className="mt-2.5 max-w-xl text-[13px] leading-relaxed text-slate-400 sm:mt-3 sm:text-base lg:line-clamp-none line-clamp-3">
+          <p className="mt-2.5 max-w-xl text-[13px] leading-relaxed text-slate-400 [@media(max-height:600px)]:hidden sm:mt-3 sm:text-base lg:line-clamp-none line-clamp-3">
             Perangkat, protokol, ekosistem, anggaran, hingga checklist keamanan
             — panduan lengkap membangun smart home modern dari lampu pintar
             sampai otomatisasi penuh.
           </p>
 
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:mt-5 lg:justify-start">
+          <div className="mt-4 flex w-full flex-wrap items-center justify-center gap-2.5 sm:mt-5 sm:gap-3 lg:justify-start">
             <button
               onClick={() => onNavigate("perangkat")}
-              className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 text-sm font-semibold text-[#05070f] transition hover:shadow-xl hover:shadow-cyan-500/30"
+              className="group inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 text-sm font-semibold text-[#05070f] transition active:scale-[0.98] hover:shadow-xl hover:shadow-cyan-500/30"
             >
               Jelajahi Perangkat
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
             </button>
             <button
               onClick={() => onNavigate("panduan")}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-white/5"
+              className="inline-flex min-h-[46px] items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition active:scale-[0.98] hover:border-cyan-400/40 hover:bg-white/5"
             >
               Cara Membangunnya
             </button>
           </div>
 
-          <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-2.5 sm:mt-6 sm:grid-cols-4">
+          <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-2 sm:mt-6 sm:grid-cols-4">
             {quickStats.map((s) => (
               <button
                 key={s.label}
                 onClick={() => onNavigate(s.target)}
-                className="glass group rounded-xl px-3 py-2.5 text-left transition hover:border-cyan-400/30"
+                className="glass group rounded-xl px-3 py-2.5 text-left transition active:scale-[0.98] hover:border-cyan-400/30"
                 aria-label={`${s.value} ${s.label} — buka halaman`}
               >
                 <div className="flex items-center justify-between">
@@ -90,6 +90,26 @@ export default function Hero({ onNavigate }) {
                 </p>
               </button>
             ))}
+          </div>
+
+          <div className="mt-3 hidden w-full max-w-xl items-center justify-between gap-3 rounded-xl border border-white/10 bg-white/[0.03] px-3 py-2.5 [@media(min-height:800px)]:flex">
+            <div className="flex items-center gap-2">
+              <span className="pulse-dot size-1.5 rounded-full bg-emerald-400" />
+              <p className="text-[11px] text-slate-300">
+                Rumah Utama <span className="text-emerald-300">· online</span>
+              </p>
+            </div>
+            <div className="flex items-center gap-3 text-[10px] text-slate-400">
+              <span className="flex items-center gap-1">
+                <Thermometer className="size-3 text-cyan-300" /> 24&deg;C
+              </span>
+              <span className="flex items-center gap-1">
+                <ShieldCheck className="size-3 text-emerald-300" /> 6 sensor
+              </span>
+              <span className="flex items-center gap-1">
+                <Leaf className="size-3 text-lime-300" /> -18%
+              </span>
+            </div>
           </div>
         </div>
 

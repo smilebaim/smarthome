@@ -10,11 +10,18 @@
   --foreground: #e6edf7;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow: hidden;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
@@ -138,9 +145,28 @@ body {
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  overscroll-behavior-inline: contain;
 }
 .no-scrollbar::-webkit-scrollbar {
   display: none;
+}
+
+/* Petunjuk visual bahwa kartu di kanan masih bisa digeser (hanya mobile) */
+@media (max-width: 639px) {
+  .swipe-fade {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 44px),
+      transparent 100%
+    );
+    mask-image: linear-gradient(
+      to right,
+      #000 0,
+      #000 calc(100% - 44px),
+      transparent 100%
+    );
+  }
 }
 
 @keyframes page-in {

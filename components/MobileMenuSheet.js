@@ -34,26 +34,26 @@ export default function MobileMenuSheet({ open, active, onNavigate, onClose }) {
         className="animate-backdrop-in absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="animate-sheet-up absolute inset-x-0 bottom-0 rounded-t-3xl border-t border-white/10 bg-[#0a0f1e] pb-[env(safe-area-inset-bottom)]">
+      <div className="animate-sheet-up absolute inset-x-0 bottom-0 max-h-[88dvh] overflow-y-auto overscroll-contain rounded-t-3xl border-t border-white/10 bg-[#0a0f1e] pb-[max(env(safe-area-inset-bottom),1rem)]">
         <div className="flex items-center justify-between px-5 pb-2 pt-3">
           <span className="mx-auto h-1 w-10 rounded-full bg-white/15" />
           <button
             onClick={onClose}
             aria-label="Tutup menu"
-            className="absolute right-4 top-3 grid size-8 place-items-center rounded-lg border border-white/10 text-slate-400"
+            className="absolute right-4 top-3 grid size-10 place-items-center rounded-xl border border-white/10 text-slate-400 active:bg-white/5"
           >
             <X className="size-4" />
           </button>
         </div>
 
-        <div className="px-5 pb-6 pt-2">
+        <div className="px-5 pb-4 pt-2">
           <p className="text-sm font-semibold text-white">Semua Halaman</p>
           <div className="mt-3 grid grid-cols-3 gap-2.5">
             {pages.map((p) => (
               <button
                 key={p.id}
                 onClick={() => onNavigate(p.id)}
-                className={`flex flex-col items-center gap-2 rounded-xl border px-2 py-3.5 transition ${
+                className={`flex min-h-[76px] flex-col items-center justify-center gap-2 rounded-xl border px-2 py-3.5 transition active:scale-[0.97] ${
                   active === p.id
                     ? "border-cyan-400/40 bg-cyan-400/10 text-cyan-300"
                     : "border-white/10 bg-white/[0.03] text-slate-300"

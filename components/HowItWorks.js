@@ -118,7 +118,7 @@ export default function HowItWorks() {
         <div className="absolute left-1/2 top-1/2 h-[300px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-3 px-4 py-4 sm:gap-4 sm:py-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-2.5 px-4 py-4 sm:gap-4 sm:py-6 lg:px-8">
         <SectionHeading
           eyebrow="Panduan Membangun"
           title={
@@ -128,22 +128,23 @@ export default function HowItWorks() {
             </>
           }
           description="Tidak perlu mengubah semuanya sekaligus. Ikuti langkahnya, periksa per ruangan, atau gunakan checklist sebelum membeli."
+          descriptionClassName={mode === "checklist" ? "hidden sm:block" : ""}
         />
 
-        <div className="flex justify-center">
-          <div className="flex gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1">
+        <div className="flex w-full justify-center">
+          <div className="grid w-full max-w-sm grid-cols-3 gap-0.5 rounded-full border border-white/10 bg-white/[0.03] p-1 sm:flex sm:w-auto sm:max-w-none">
             {modes.map((m) => (
               <button
                 key={m.key}
                 onClick={() => setMode(m.key)}
                 aria-pressed={mode === m.key}
-                className={`flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
+                className={`flex min-h-[36px] items-center justify-center gap-1.5 rounded-full px-2 py-1.5 text-[12.5px] font-medium transition active:scale-95 sm:px-3.5 sm:text-xs ${
                   mode === m.key
                     ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-[#05070f] shadow-lg shadow-cyan-500/20"
                     : "text-slate-400 hover:text-white"
                 }`}
               >
-                <m.icon className="size-3.5" />
+                <m.icon className="size-3.5 shrink-0" />
                 {m.label}
               </button>
             ))}
@@ -151,11 +152,11 @@ export default function HowItWorks() {
         </div>
 
         {mode === "langkah" && (
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-4">
+          <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-4">
             {steps.map((s, i) => (
               <div
                 key={s.step}
-                className="glass group relative flex w-[70%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
+                className="glass group relative flex w-[78%] shrink-0 snap-center flex-col rounded-2xl p-3.5 transition duration-300 hover:border-cyan-400/30 sm:w-auto sm:p-4"
                 style={{ animation: `fade-up 0.45s ease-out ${i * 70}ms both` }}
               >
                 <div className="flex items-center justify-between">
@@ -167,7 +168,7 @@ export default function HowItWorks() {
                   </span>
                 </div>
                 <h3 className="mt-4 text-base font-semibold text-white">{s.title}</h3>
-                <p className="mt-2 text-xs leading-relaxed text-slate-400 lg:line-clamp-5">
+                <p className="mt-2 text-[12px] leading-relaxed text-slate-400 [@media(max-height:600px)]:line-clamp-3 lg:line-clamp-5">
                   {s.desc}
                 </p>
               </div>
@@ -176,11 +177,11 @@ export default function HowItWorks() {
         )}
 
         {mode === "ruangan" && (
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+          <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3">
             {rooms.map((r, i) => (
               <div
                 key={r.name}
-                className="glass group flex w-[72%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
+                className="glass group flex w-[80%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
                 style={{ animation: `fade-up 0.4s ease-out ${i * 50}ms both` }}
               >
                 <div className="flex items-center gap-3">
@@ -209,7 +210,7 @@ export default function HowItWorks() {
         )}
 
         {mode === "checklist" && (
-          <div className="glass mx-auto w-full max-w-4xl rounded-2xl p-4 sm:p-5">
+          <div className="glass mx-auto w-full max-w-4xl rounded-2xl p-3.5 sm:p-5">
             <div className="flex items-center gap-3">
               <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/[0.07]">
                 <div
@@ -222,7 +223,7 @@ export default function HowItWorks() {
               </span>
             </div>
 
-            <div className="mt-3 grid grid-cols-2 gap-1.5 sm:mt-4 sm:gap-2">
+            <div className="mt-2.5 grid grid-cols-2 gap-1 sm:mt-4 sm:gap-2">
               {checklist.map((item, i) => {
                 const on = checked.includes(i);
                 return (
@@ -230,7 +231,7 @@ export default function HowItWorks() {
                     key={item}
                     onClick={() => toggle(i)}
                     aria-pressed={on}
-                    className={`flex items-start gap-2 rounded-xl border p-2 text-left transition sm:gap-2.5 sm:p-3 ${
+                    className={`flex items-start gap-1.5 rounded-xl border p-1.5 text-left transition active:scale-[0.99] sm:gap-2.5 sm:p-3 ${
                       on
                         ? "border-cyan-400/30 bg-cyan-400/[0.07]"
                         : "border-white/[0.08] bg-white/[0.02] hover:border-white/15"
@@ -247,7 +248,7 @@ export default function HowItWorks() {
                       {on && <Check className="size-2.5 sm:size-3" strokeWidth={3} />}
                     </span>
                     <span
-                      className={`text-[10.5px] leading-snug sm:text-[11.5px] ${
+                      className={`text-[10px] leading-snug sm:text-[11.5px] ${
                         on ? "text-slate-400 line-through decoration-slate-600" : "text-slate-200"
                       }`}
                     >
@@ -258,7 +259,7 @@ export default function HowItWorks() {
               })}
             </div>
 
-            <p className="mt-4 border-t border-white/[0.06] pt-3 text-center text-[10.5px] text-slate-500">
+            <p className="mt-3 border-t border-white/[0.06] pt-2.5 text-center text-[10.5px] text-slate-500 [@media(max-height:700px)]:hidden sm:mt-4 sm:pt-3">
               Klik setiap poin untuk menandai progres Anda — target ideal: semua tercentang sebelum berbelanja.
             </p>
           </div>

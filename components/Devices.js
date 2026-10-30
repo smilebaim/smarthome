@@ -60,7 +60,7 @@ const devices = [
     desc: "Otak rumah pintar — menghubungkan seluruh perangkat lintas protokol menjadi satu pusat kendali dan otomasi.",
     tags: ["Matter", "Zigbee", "Z-Wave"],
     cat: "kontrol",
-    price: "Rp 900 rb – 2,5 jt",
+    price: "Rp 900 rb–2,5 jt",
     power: "±5 W, adaptor 5 V",
     install: "Colok & play, 10 menit",
     rooms: "Pusat rumah / area Wi-Fi kuat",
@@ -72,7 +72,7 @@ const devices = [
     desc: "Fondasi semua perangkat nirkabel: sinyal merata ke seluruh ruangan, stabil untuk puluhan device sekaligus.",
     tags: ["Wi-Fi 6", "Ethernet", "Mesh"],
     cat: "infrastruktur",
-    price: "Rp 1,2 – 4 jt (2–3 node)",
+    price: "Rp 1,2–4 jt (2–3 node)",
     power: "12–18 W per node",
     install: "Siapkan titik listrik & LAN",
     rooms: "1 node per 2 ruangan / per lantai",
@@ -84,7 +84,7 @@ const devices = [
     desc: "16 juta warna dan penyesuaian suhu cahaya; menyala otomatis saat matahari terbenam, meredup saat waktu tidur.",
     tags: ["Wi-Fi", "Zigbee"],
     cat: "pencahayaan",
-    price: "Rp 120 – 350 rb / titik",
+    price: "Rp 120–350 rb/titik",
     power: "9 W (setara 60 W)",
     install: "Ganti bohlam, tanpa teknisi",
     rooms: "Kamar tidur, ruang tamu, teras",
@@ -96,7 +96,7 @@ const devices = [
     desc: "Ubah saklar lama menjadi pintar — kontrol via aplikasi, suara, jadwal, dan skenario otomatis.",
     tags: ["Zigbee", "Wi-Fi"],
     cat: "pencahayaan",
-    price: "Rp 250 – 500 rb / panel",
+    price: "Rp 250–500 rb/panel",
     power: "<1 W (standby)",
     install: "Perlu instalasi listrik, 20 menit",
     rooms: "Semua ruangan",
@@ -108,7 +108,7 @@ const devices = [
     desc: "Cahaya tidak langsung untuk suasana bioskop, dapur, atau backdrop TV — bisa diatur warna dan intensitasnya.",
     tags: ["Wi-Fi", "Zigbee"],
     cat: "pencahayaan",
-    price: "Rp 150 – 400 rb / 5 m",
+    price: "Rp 150–400 rb/5 m",
     power: "12–24 W",
     install: "Tempel (adhesive), 15 menit",
     rooms: "Dapur, backdrop TV, kolong tempat tidur",
@@ -120,7 +120,7 @@ const devices = [
     desc: "Akses fingerprint, PIN, kartu, dan remote unlock dengan log aktivitas real-time untuk setiap pintu masuk.",
     tags: ["Wi-Fi", "Bluetooth"],
     cat: "keamanan",
-    price: "Rp 1,8 – 5 jt",
+    price: "Rp 1,8–5 jt",
     power: "4× AA (±6 bulan)",
     install: "Bor pintu, 30–60 menit",
     rooms: "Pintu utama, pintu samping",
@@ -132,7 +132,7 @@ const devices = [
     desc: "Deteksi pintar orang dan kendaraan, penglihatan malam warna, serta rekaman awan yang bisa diakses kapan saja.",
     tags: ["PoE", "Wi-Fi"],
     cat: "keamanan",
-    price: "Rp 700 rb – 2,5 jt / unit",
+    price: "Rp 700 rb–2,5 jt/unit",
     power: "5–8 W (PoE 12 W)",
     install: "Adaptor atau kabel PoE",
     rooms: "Teras, garasi, ruang tamu",
@@ -144,7 +144,7 @@ const devices = [
     desc: "Lihat dan bicara dengan tamu dari mana saja; rekaman otomatis setiap kunjungan tersimpan aman.",
     tags: ["Wi-Fi"],
     cat: "keamanan",
-    price: "Rp 600 rb – 2 jt",
+    price: "Rp 600 rb–2 jt",
     power: "Baterai atau kabel bel lama",
     install: "Tempel / sambung kabel bel",
     rooms: "Pintu depan",
@@ -156,7 +156,7 @@ const devices = [
     desc: "Mata rumah Anda — memicu lampu saat ada pergerakan dan alarm saat mode keamanan berangkat aktif.",
     tags: ["Zigbee"],
     cat: "keamanan",
-    price: "Rp 100 – 250 rb",
+    price: "Rp 100–250 rb",
     power: "CR2032 (1–2 tahun)",
     install: "Tempel di ketinggian 2,1 m",
     rooms: "Lorong, teras, garasi",
@@ -168,7 +168,7 @@ const devices = [
     desc: "Notifikasi instan setiap pintu atau jendela terbuka — terintegrasi penuh dengan mode keamanan rumah.",
     tags: ["Zigbee"],
     cat: "keamanan",
-    price: "Rp 80 – 200 rb",
+    price: "Rp 80–200 rb",
     power: "Baterai (1–2 tahun)",
     install: "Tempel magnet, 5 menit",
     rooms: "Pintu utama, jendela belakang",
@@ -180,7 +180,7 @@ const devices = [
     desc: "Suara peringatan 100+ dB di dalam rumah plus notifikasi ke smartphone saat ada penyusup.",
     tags: ["Zigbee", "Wi-Fi"],
     cat: "keamanan",
-    price: "Rp 200 – 450 rb",
+    price: "Rp 200–450 rb",
     power: "Colok listrik / baterai",
     install: "Pasang di dinding lorong",
     rooms: "Lorong tengah, dekat tangga",
@@ -192,7 +192,7 @@ const devices = [
     desc: "Mempelajari pola suhu penghuni, menyesuaikan pendingin ruangan, otomatis hemat saat rumah kosong.",
     tags: ["Wi-Fi", "Zigbee"],
     cat: "energi",
-    price: "Rp 700 rb – 2,5 jt",
+    price: "Rp 700 rb–2,5 jt",
     power: "24 V (kabel termostat)",
     install: "Ganti termostat lama, 30 menit",
     rooms: "Ruang keluarga / area AC sentral",
@@ -204,7 +204,7 @@ const devices = [
     desc: "Jadikan AC dan TV lama pintar tanpa ganti unit — jadwal suhu, otomasi mode tidur, dan kontrol suara.",
     tags: ["Wi-Fi", "Infrared"],
     cat: "energi",
-    price: "Rp 200 – 450 rb",
+    price: "Rp 200–450 rb",
     power: "5 V USB / baterai",
     install: "Tempel dekat AC, 10 menit",
     rooms: "Kamar tidur, ruang keluarga",
@@ -216,7 +216,7 @@ const devices = [
     desc: "Pantau konsumsi listrik tiap perangkat secara real-time dan jadwalkan on/off untuk memberantas mode standby.",
     tags: ["Wi-Fi"],
     cat: "energi",
-    price: "Rp 90 – 250 rb",
+    price: "Rp 90–250 rb",
     power: "16 A / 1800 W maksimal",
     install: "Colok langsung, 1 menit",
     rooms: "TV, dispenser, mesin cuci",
@@ -228,7 +228,7 @@ const devices = [
     desc: "Baca total pemakaian listrik rumah dari panel MCB — lihat biaya harian dan temukan perangkat paling boros.",
     tags: ["Wi-Fi", "CT Clamp"],
     cat: "energi",
-    price: "Rp 900 rb – 2 jt",
+    price: "Rp 900 rb–2 jt",
     power: "Dipasang di dalam panel",
     install: "Wajib teknisi listrik berlisensi",
     rooms: "Panel MCB utama",
@@ -240,7 +240,7 @@ const devices = [
     desc: "Pantau PM2.5, CO₂, suhu, dan kelembapan; picu air purifier otomatis saat udara mulai buruk.",
     tags: ["Wi-Fi", "Matter"],
     cat: "kontrol",
-    price: "Rp 350 – 900 rb",
+    price: "Rp 350–900 rb",
     power: "5 V USB",
     install: "Colok / tempel dinding",
     rooms: "Kamar tidur, ruang anak",
@@ -252,7 +252,7 @@ const devices = [
     desc: "Buka dan tutup otomatis mengikuti posisi matahari — rumah tetap sejuk tanpa pendingin bekerja keras.",
     tags: ["Zigbee"],
     cat: "kontrol",
-    price: "Rp 800 rb – 2,5 jt / rel",
+    price: "Rp 800 rb–2,5 jt/rel",
     power: "Adaptor 12 V",
     install: "Rel khusus, 1–2 jam",
     rooms: "Ruang tamu, kamar utama",
@@ -264,7 +264,7 @@ const devices = [
     desc: "Pusat perintah suara rumah — nyalakan skenario, tanyakan cuaca, dan jalankan rutinitas harian Anda.",
     tags: ["Wi-Fi", "Matter"],
     cat: "kontrol",
-    price: "Rp 500 rb – 2,5 jt",
+    price: "Rp 500 rb–2,5 jt",
     power: "15–30 W",
     install: "Colok listrik, 10 menit",
     rooms: "Dapur, ruang keluarga",
@@ -276,7 +276,7 @@ const devices = [
     desc: "Memetakan ruangan dengan presisi, membersihkan sesuai jadwal, dan kembali mengisi daya secara otomatis.",
     tags: ["Wi-Fi"],
     cat: "rumah-tangga",
-    price: "Rp 2,5 – 9 jt",
+    price: "Rp 2,5–9 jt",
     power: "Dock ±30 W saat mengisi",
     install: "Siapkan dock & area terbuka",
     rooms: "Ruang tamu, lorong, kamar",
@@ -288,7 +288,7 @@ const devices = [
     desc: "Penyiraman taman cerdas berbasis data cuaca dan sensor kelembapan tanah — tanaman segar tanpa boros air.",
     tags: ["Wi-Fi", "Baterai"],
     cat: "rumah-tangga",
-    price: "Rp 400 rb – 1,2 jt",
+    price: "Rp 400 rb–1,2 jt",
     power: "Baterai / panel surya kecil",
     install: "Sambung ke keran luar",
     rooms: "Taman, pot besar, kebun mini",
@@ -296,21 +296,23 @@ const devices = [
   },
 ];
 
-const PAGE_SIZE_DESKTOP = 8;
-const PAGE_SIZE_TABLET = 6;
+const pageSizeFor = (width) => {
+  if (width >= 1024) return 8;
+  if (width >= 640) return 6;
+  return 4;
+};
 
 export default function Devices() {
   const [active, setActive] = useState("semua");
   const [page, setPage] = useState(0);
   const [detail, setDetail] = useState(null);
-  const [perPage, setPerPage] = useState(PAGE_SIZE_DESKTOP);
+  const [perPage, setPerPage] = useState(4);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1024px)");
-    const apply = () => setPerPage(mq.matches ? PAGE_SIZE_DESKTOP : PAGE_SIZE_TABLET);
+    const apply = () => setPerPage(pageSizeFor(window.innerWidth));
     apply();
-    mq.addEventListener("change", apply);
-    return () => mq.removeEventListener("change", apply);
+    window.addEventListener("resize", apply);
+    return () => window.removeEventListener("resize", apply);
   }, []);
 
   const filtered = useMemo(
@@ -352,7 +354,7 @@ export default function Devices() {
           description="20 perangkat paling sering dipakai — lengkap dengan kisaran harga, kebutuhan daya, dan cara pemasangan."
         />
 
-        <div className="no-scrollbar swipe-fade -mx-4 flex scroll-px-4 gap-2 overflow-x-auto px-4 py-0.5 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
+        <div className="no-scrollbar swipe-fade -mx-4 flex scroll-px-4 gap-2 overflow-x-auto px-4 py-0.5 md:mx-0 md:flex-wrap md:justify-center md:overflow-visible md:px-0">
           {categories.map((c) => (
             <button
               key={c.key}
@@ -369,102 +371,62 @@ export default function Devices() {
           ))}
         </div>
 
-        {/* Mobile: swipe carousel */}
-        <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:hidden">
-          {filtered.map((d, i) => (
+        {/* Grid responsif: 2 kolom ponsel, 3 tablet, 4 desktop */}
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 lg:grid-cols-4">
+          {visible.map((d, i) => (
             <button
               key={d.name}
               onClick={() => setDetail(d)}
-              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col rounded-2xl p-3.5 text-left transition active:scale-[0.99]"
-              style={{ animation: `fade-up 0.4s ease-out ${Math.min(i, 8) * 45}ms both` }}
+              className="glass group relative flex flex-col rounded-xl p-2.5 text-left transition duration-300 active:scale-[0.99] hover:border-cyan-400/30 sm:rounded-2xl sm:p-3.5"
+              style={{ animation: `fade-up 0.4s ease-out ${Math.min(i, 8) * 35}ms both` }}
             >
-              <div className="flex items-start justify-between gap-2">
-                <span className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/[0.05]">
-                  <d.icon className="size-5 text-cyan-300" strokeWidth={1.8} />
+              <div className="pointer-events-none absolute -right-12 -top-12 size-28 rounded-full bg-cyan-400 opacity-0 blur-3xl transition duration-500 group-hover:opacity-15" />
+              <div className="flex items-center justify-between gap-1.5">
+                <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40 sm:size-9">
+                  <d.icon className="size-4 text-cyan-300" strokeWidth={1.8} />
                 </span>
                 <span
-                  className={`rounded-full border px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide ${
+                  className={`max-w-[68%] truncate rounded-full border px-1.5 py-0.5 text-[8px] font-semibold uppercase tracking-wide sm:px-2 sm:text-[8.5px] ${
                     categoryBadge[d.cat]
                   }`}
                 >
                   {categories.find((c) => c.key === d.cat)?.label}
                 </span>
               </div>
-              <h3 className="mt-3 text-[15px] font-semibold text-white">{d.name}</h3>
-              <p className="mt-1.5 text-xs leading-relaxed text-slate-400 line-clamp-2">
+              <h3 className="mt-2 text-[12.5px] font-semibold leading-snug text-white sm:mt-2.5 sm:text-[13.5px]">
+                {d.name}
+              </h3>
+              <p className="mt-1 flex-1 text-[10px] leading-relaxed text-slate-400 line-clamp-2 sm:text-[11px] [@media(max-height:750px)]:hidden">
                 {d.desc}
               </p>
-              <div className="mt-2 flex flex-wrap gap-1">
-                {d.tags.map((t) => (
-                  <span
-                    key={t}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 font-mono text-[9.5px] text-slate-400"
-                  >
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-2.5 flex items-center justify-between border-t border-white/[0.06] pt-2.5">
-                <span className="text-xs font-semibold text-cyan-300">{d.price}</span>
-                <span className="flex items-center gap-1 text-[11px] text-slate-500">
-                  Detail <ArrowRight className="size-3" />
+              <div className="mt-2 flex items-center justify-between gap-1 border-t border-white/[0.06] pt-2 sm:mt-2.5">
+                <span className="truncate text-[10px] font-semibold text-cyan-300 sm:text-[11px]">
+                  {d.price}
                 </span>
+                <ArrowRight className="size-3 shrink-0 text-slate-600 transition group-hover:translate-x-0.5 group-hover:text-cyan-300 max-[359px]:hidden sm:size-3.5" />
               </div>
             </button>
           ))}
         </div>
 
-        {/* Tablet & desktop: paginated grid */}
-        <div className="hidden sm:block">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4">
-            {visible.map((d, i) => (
-              <button
-                key={d.name}
-                onClick={() => setDetail(d)}
-                className="glass group relative flex flex-col rounded-2xl p-3.5 text-left transition duration-300 hover:border-cyan-400/30"
-                style={{ animation: `fade-up 0.4s ease-out ${i * 35}ms both` }}
-              >
-                <div className="pointer-events-none absolute -right-12 -top-12 size-28 rounded-full bg-cyan-400 opacity-0 blur-3xl transition duration-500 group-hover:opacity-15" />
-                <div className="flex items-center justify-between gap-2">
-                  <span className="grid size-9 place-items-center rounded-lg border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
-                    <d.icon className="size-4 text-cyan-300" strokeWidth={1.8} />
-                  </span>
-                  <span
-                    className={`rounded-full border px-2 py-0.5 text-[8.5px] font-semibold uppercase tracking-wide ${
-                      categoryBadge[d.cat]
-                    }`}
-                  >
-                    {categories.find((c) => c.key === d.cat)?.label}
-                  </span>
-                </div>
-                <h3 className="mt-2.5 text-[13.5px] font-semibold leading-snug text-white">
-                  {d.name}
-                </h3>
-                <p className="mt-1 flex-1 text-[11px] leading-relaxed text-slate-400 line-clamp-2">
-                  {d.desc}
-                </p>
-                <div className="mt-2.5 flex items-center justify-between border-t border-white/[0.06] pt-2">
-                  <span className="text-[11px] font-semibold text-cyan-300">{d.price}</span>
-                  <ArrowRight className="size-3.5 text-slate-600 transition group-hover:translate-x-0.5 group-hover:text-cyan-300" />
-                </div>
-              </button>
-            ))}
-          </div>
-
-          <div className="mt-3 flex items-center justify-between">
-            <span className="text-[11px] text-slate-500">
-              Menampilkan {currentPage * perPage + 1}–
-              {Math.min((currentPage + 1) * perPage, filtered.length)} dari {filtered.length} perangkat
+        <div className="flex items-center justify-between gap-2">
+          <span className="text-[10px] text-slate-500 sm:text-[11px]">
+            Menampilkan {currentPage * perPage + 1}–
+            {Math.min((currentPage + 1) * perPage, filtered.length)} dari {filtered.length} perangkat
+          </span>
+          <div className="flex shrink-0 items-center gap-1.5">
+            <button
+              onClick={() => setPage(Math.max(0, currentPage - 1))}
+              disabled={currentPage === 0}
+              aria-label="Halaman sebelumnya"
+              className="grid size-7 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 transition hover:border-cyan-400/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              <ChevronLeft className="size-4" />
+            </button>
+            <span className="min-w-[38px] text-center text-[10px] font-semibold text-slate-300 sm:hidden">
+              {currentPage + 1} / {pages}
             </span>
-            <div className="flex items-center gap-1.5">
-              <button
-                onClick={() => setPage(Math.max(0, currentPage - 1))}
-                disabled={currentPage === 0}
-                aria-label="Halaman sebelumnya"
-                className="grid size-7 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 transition hover:border-cyan-400/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
-              >
-                <ChevronLeft className="size-4" />
-              </button>
+            <div className="hidden items-center gap-1.5 sm:flex">
               {Array.from({ length: pages }, (_, p) => (
                 <button
                   key={p}
@@ -480,21 +442,17 @@ export default function Devices() {
                   {p + 1}
                 </button>
               ))}
-              <button
-                onClick={() => setPage(Math.min(pages - 1, currentPage + 1))}
-                disabled={currentPage === pages - 1}
-                aria-label="Halaman berikutnya"
-                className="grid size-7 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 transition hover:border-cyan-400/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
-              >
-                <ChevronRight className="size-4" />
-              </button>
             </div>
+            <button
+              onClick={() => setPage(Math.min(pages - 1, currentPage + 1))}
+              disabled={currentPage === pages - 1}
+              aria-label="Halaman berikutnya"
+              className="grid size-7 place-items-center rounded-lg border border-white/10 bg-white/[0.03] text-slate-300 transition hover:border-cyan-400/30 hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+            >
+              <ChevronRight className="size-4" />
+            </button>
           </div>
         </div>
-
-        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:600px)]:hidden">
-          Geser kartu, ketuk untuk melihat detail &rarr;
-        </p>
 
         <div className="hidden items-start gap-2 rounded-xl border border-cyan-400/15 bg-cyan-400/[0.05] px-3 py-2.5 sm:hidden [@media(min-height:800px)]:flex">
           <Lightbulb className="mt-0.5 size-4 shrink-0 text-amber-300" />

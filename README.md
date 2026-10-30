@@ -29,7 +29,7 @@ Navigasi tab (navbar/menu bawah) memakai `router.push`, dan tautan lama berbasis
 - **Ramah genggam** — target sentuh ≥ 44 px, safe-area notch/home-indicator, header & navigasi dipadatkan otomatis di layar pendek/landscape
 - **Beranda interaktif** — mockup dashboard kontrol rumah pintar, kartu statistik yang bisa diklik menuju halaman terkait
 - **Keunggulan** — 6 manfaat utama smart home (karusel geser di mobile)
-- **Katalog 20 perangkat** — filter 6 kategori (Keamanan, Pencahayaan, Energi & Iklim, Kontrol, Rumah Tangga, Infrastruktur), paginasi di desktop, serta modal detail berisi kisaran harga, daya, cara pemasangan, ruangan ideal, dan tips
+- **Katalog 20 perangkat** — grid responsif 2 kolom di ponsel (4 per halaman), 3 kolom tablet, 4 kolom desktop; filter 6 kategori (Keamanan, Pencahayaan, Energi & Iklim, Kontrol, Rumah Tangga, Infrastruktur), paginasi adaptif, serta modal detail berisi kisaran harga, daya, cara pemasangan, ruangan ideal, dan tips
 - **Protokol jaringan** — penjelasan Wi-Fi, Zigbee, Z-Wave, Matter/Thread, dan Bluetooth BLE
 - **Ekosistem platform** — Google Home, Apple Home, Amazon Alexa, Home Assistant, dan SmartThings beserta rekomendasi pemilihan
 - **Panduan 3 mode** — langkah demi langkah, rekomendasi per ruangan (6 ruangan), dan checklist interaktif 8 poin dengan progres

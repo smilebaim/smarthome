@@ -19,7 +19,6 @@ import {
   Droplets,
 } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import Reveal from "./Reveal";
 
 const categories = [
   { key: "semua", label: "Semua" },
@@ -152,71 +151,69 @@ export default function Devices() {
     active === "semua" ? devices : devices.filter((d) => d.cat === active);
 
   return (
-    <section id="perangkat" className="relative py-24">
-      <div className="absolute left-[-200px] top-1/3 h-[420px] w-[420px] rounded-full bg-blue-600/10 blur-[140px]" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Katalog Perangkat"
-            title={
-              <>
-                Alat-alat pembangun{" "}
-                <span className="text-gradient">smart home modern</span>
-              </>
-            }
-            description="Fondasi rumah pintar yang kokoh dibangun dari perangkat tepat guna — pilih berdasarkan kategori kebutuhan Anda."
-          />
-        </Reveal>
+    <section className="no-scrollbar relative h-full overflow-y-auto">
+      <div className="absolute left-[-200px] top-1/3 h-[360px] w-[360px] rounded-full bg-blue-600/10 blur-[130px]" />
 
-        <Reveal delay={100}>
-          <div className="mt-10 flex flex-wrap justify-center gap-2.5">
-            {categories.map((c) => (
-              <button
-                key={c.key}
-                onClick={() => setActive(c.key)}
-                className={`rounded-full px-4.5 py-2 text-sm font-medium transition ${
-                  active === c.key
-                    ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-[#05070f] shadow-lg shadow-cyan-500/25"
-                    : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-400/30 hover:text-white"
-                }`}
-              >
-                {c.label}
-              </button>
-            ))}
-          </div>
-        </Reveal>
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-4 px-4 py-5 lg:px-8">
+        <SectionHeading
+          eyebrow="Katalog Perangkat"
+          title={
+            <>
+              Alat-alat pembangun{" "}
+              <span className="text-gradient">smart home modern</span>
+            </>
+          }
+          description="Fondasi rumah pintar dibangun dari perangkat tepat guna — pilih berdasarkan kategori kebutuhan Anda."
+        />
 
-        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 lg:mx-0 lg:flex-wrap lg:justify-center lg:overflow-visible lg:px-0">
+          {categories.map((c) => (
+            <button
+              key={c.key}
+              onClick={() => setActive(c.key)}
+              aria-pressed={active === c.key}
+              className={`shrink-0 rounded-full px-4 py-1.5 text-xs font-medium transition ${
+                active === c.key
+                  ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-[#05070f] shadow-lg shadow-cyan-500/25"
+                  : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-400/30 hover:text-white"
+              }`}
+            >
+              {c.label}
+            </button>
+          ))}
+        </div>
+
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0 xl:grid-cols-4">
           {filtered.map((d, i) => (
             <div
               key={d.name}
-              className="group glass relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30"
-              style={{ animation: `fade-up 0.5s ease-out ${i * 60}ms both` }}
+              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 lg:w-auto"
+              style={{ animation: `fade-up 0.45s ease-out ${i * 45}ms both` }}
             >
-              <div className="pointer-events-none absolute -right-16 -top-16 size-40 rounded-full bg-cyan-400 opacity-0 blur-3xl transition duration-500 group-hover:opacity-15" />
-              <div className="flex items-start justify-between gap-3">
-                <span className="grid size-12 place-items-center rounded-xl border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
-                  <d.icon className="size-6 text-cyan-300" strokeWidth={1.8} />
+              <div className="pointer-events-none absolute -right-14 -top-14 size-36 rounded-full bg-cyan-400 opacity-0 blur-3xl transition duration-500 group-hover:opacity-15" />
+              <div className="flex items-start justify-between gap-2">
+                <span className="grid size-11 place-items-center rounded-xl border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
+                  <d.icon className="size-5 text-cyan-300" strokeWidth={1.8} />
                 </span>
                 <span
-                  className={`rounded-full border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide ${
+                  className={`rounded-full border px-2.5 py-1 text-[9px] font-semibold uppercase tracking-wide ${
                     categoryBadge[d.cat]
                   }`}
                 >
                   {categories.find((c) => c.key === d.cat)?.label}
                 </span>
               </div>
-              <h3 className="mt-5 text-lg font-semibold text-white">
+              <h3 className="mt-3.5 text-[15px] font-semibold text-white">
                 {d.name}
               </h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+              <p className="mt-1.5 flex-1 text-xs leading-relaxed text-slate-400 line-clamp-3">
                 {d.desc}
               </p>
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {d.tags.map((t) => (
                   <span
                     key={t}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[11px] text-slate-400"
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 font-mono text-[10px] text-slate-400"
                   >
                     {t}
                   </span>

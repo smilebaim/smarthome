@@ -1,6 +1,5 @@
 import { Wifi, Radio, Waves, Globe, Bluetooth } from "lucide-react";
 import SectionHeading from "./SectionHeading";
-import Reveal from "./Reveal";
 
 const protocols = [
   {
@@ -47,74 +46,79 @@ const protocols = [
 
 export default function Protocols() {
   return (
-    <section id="protokol" className="relative py-24">
-      <div className="absolute right-[-180px] top-1/4 h-[380px] w-[380px] rounded-full bg-violet-600/10 blur-[130px]" />
-      <div className="relative mx-auto max-w-7xl px-5 lg:px-8">
-        <Reveal>
-          <SectionHeading
-            eyebrow="Protokol Jaringan"
-            title={
-              <>
-                Bahasa yang dipakai{" "}
-                <span className="text-gradient">rumah pintar</span> untuk
-                berbicara
-              </>
-            }
-            description="Rumah pintar modern memadukan beberapa protokol sekaligus — masing-masing punya peran. Pahami mereka sebelum membeli perangkat pertama Anda."
-          />
-        </Reveal>
+    <section className="no-scrollbar relative h-full overflow-y-auto">
+      <div className="absolute right-[-180px] top-1/4 h-[340px] w-[340px] rounded-full bg-violet-600/10 blur-[130px]" />
 
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-5 px-4 py-6 lg:px-8">
+        <SectionHeading
+          eyebrow="Protokol Jaringan"
+          title={
+            <>
+              Bahasa yang dipakai{" "}
+              <span className="text-gradient">rumah pintar</span>
+            </>
+          }
+          description="Rumah pintar modern memadukan beberapa protokol sekaligus — masing-masing punya peran. Pahami sebelum membeli perangkat pertama Anda."
+        />
+
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0">
           {protocols.map((p, i) => (
-            <Reveal key={p.name} delay={(i % 3) * 100} className={i === 4 ? "lg:col-span-1" : ""}>
-              <div className="group glass h-full rounded-2xl p-6 transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30">
-                <div className="flex items-center gap-3.5">
-                  <span className="grid size-12 place-items-center rounded-xl border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
-                    <p.icon className={`size-6 ${p.accent}`} strokeWidth={1.8} />
-                  </span>
-                  <div>
-                    <h3 className="text-lg font-semibold text-white">
-                      {p.name}
-                    </h3>
-                    <p className="text-xs text-slate-500">{p.tagline}</p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-relaxed text-slate-400">
-                  {p.desc}
-                </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {p.chips.map((c) => (
-                    <span
-                      key={c}
-                      className="rounded-md border border-white/10 bg-white/[0.03] px-2.5 py-1 text-[11px] font-medium text-slate-300"
-                    >
-                      {c}
-                    </span>
-                  ))}
+            <div
+              key={p.name}
+              className="glass group flex w-[80%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 lg:w-auto"
+              style={{ animation: `fade-up 0.45s ease-out ${i * 55}ms both` }}
+            >
+              <div className="flex items-center gap-3">
+                <span className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
+                  <p.icon className={`size-5 ${p.accent}`} strokeWidth={1.8} />
+                </span>
+                <div>
+                  <h3 className="text-base font-semibold text-white">
+                    {p.name}
+                  </h3>
+                  <p className="text-[11px] text-slate-500">{p.tagline}</p>
                 </div>
               </div>
-            </Reveal>
+              <p className="mt-3 flex-1 text-xs leading-relaxed text-slate-400 lg:line-clamp-4">
+                {p.desc}
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {p.chips.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-2 py-0.5 text-[10px] font-medium text-slate-300"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
 
-          <Reveal delay={200}>
-            <div className="relative h-full overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-6">
-              <h3 className="text-lg font-semibold text-white">
-                Rumus praktisnya
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-300">
-                Gunakan <span className="font-semibold text-cyan-300">Wi-Fi</span>{" "}
-                untuk kamera &amp; speaker,{" "}
-                <span className="font-semibold text-violet-300">Zigbee</span>{" "}
-                untuk armada sensor, dan pastikan perangkat baru Anda
-                berlogo <span className="font-semibold text-amber-300">Matter</span>.
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">
-                Kombinasi ini memberi keseimbangan terbaik antara kecepatan,
-                ketahanan baterai, dan masa depan yang terbuka.
-              </p>
-            </div>
-          </Reveal>
+          <div
+            className="relative flex w-[80%] shrink-0 snap-center flex-col justify-center overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 lg:w-auto"
+            style={{ animation: "fade-up 0.45s ease-out 300ms both" }}
+          >
+            <h3 className="text-base font-semibold text-white">
+              Rumus praktisnya
+            </h3>
+            <p className="mt-2 text-xs leading-relaxed text-slate-300">
+              Gunakan <span className="font-semibold text-cyan-300">Wi-Fi</span>{" "}
+              untuk kamera &amp; speaker,{" "}
+              <span className="font-semibold text-violet-300">Zigbee</span>{" "}
+              untuk armada sensor, dan pastikan perangkat baru berlogo{" "}
+              <span className="font-semibold text-amber-300">Matter</span>.
+            </p>
+            <p className="mt-2 text-xs leading-relaxed text-slate-400">
+              Kombinasi ini memberi keseimbangan terbaik antara kecepatan,
+              ketahanan baterai, dan masa depan terbuka.
+            </p>
+          </div>
         </div>
+
+        <p className="text-center text-[11px] text-slate-600 lg:hidden">
+          Geser kartu untuk melihat lainnya &rarr;
+        </p>
       </div>
     </section>
   );

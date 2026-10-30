@@ -6,12 +6,14 @@ Dibangun dengan [Next.js](https://nextjs.org) (App Router) + [Tailwind CSS](http
 
 ## Fitur Halaman
 
+- **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll, navigasi via tab (desktop: navbar atas, mobile: menu bawah 6 item)
 - **Hero interaktif** — mockup dashboard kontrol rumah pintar dengan animasi
-- **Keunggulan** — 6 manfaat utama smart home
+- **Keunggulan** — 6 manfaat utama smart home (karusel geser di mobile)
 - **Katalog 15 perangkat** — dengan filter kategori (Keamanan, Pencahayaan, Energi, Kontrol & Kenyamanan, Rumah Tangga)
 - **Protokol jaringan** — penjelasan Wi-Fi, Zigbee, Z-Wave, Matter/Thread, dan Bluetooth BLE
 - **Panduan 4 langkah** — dari audit rumah hingga otomasi penuh
-- Desain responsif, dark theme berteknologi, animasi scroll reveal
+- **Kontak** — CTA konsultasi + tautan footer
+- Desain responsif, dark theme berteknologi, animasi masuk antar halaman
 
 ## Menjalankan Secara Lokal
 

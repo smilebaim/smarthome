@@ -16,11 +16,13 @@ const WA_TEXT = encodeURIComponent(
 export default function Kontak({ onNavigate }) {
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_65%_60%_at_50%_45%,black,transparent)]" />
-      <div className="absolute -top-24 left-1/2 h-64 w-[520px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[110px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_65%_60%_at_50%_45%,black,transparent)]" />
+        <div className="absolute -top-24 left-1/2 h-64 w-[520px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[110px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-3xl flex-col items-center justify-center gap-4 px-4 py-6 sm:px-6">
-        <div className="animate-fade-up relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-[#0a0f1e] to-violet-600/15 px-6 py-7 text-center sm:px-12 sm:py-9">
+      <div className="relative mx-auto flex min-h-full w-full max-w-3xl flex-col items-center justify-center gap-2.5 px-4 py-4 sm:gap-4 sm:px-6 sm:py-6">
+        <div className="animate-fade-up relative w-full overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-cyan-500/10 via-[#0a0f1e] to-violet-600/15 px-4 py-5 text-center sm:px-12 sm:py-8">
           <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_80%_at_50%_50%,black,transparent)]" />
           <div className="absolute -top-20 left-1/2 h-56 w-[420px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[100px]" />
 
@@ -29,22 +31,22 @@ export default function Kontak({ onNavigate }) {
               <Sparkles className="size-3.5" />
               Gratis konsultasi kebutuhan
             </span>
-            <h2 className="mx-auto mt-3.5 max-w-xl text-2xl font-bold tracking-tight text-white sm:text-3xl">
+            <h2 className="mx-auto mt-3 max-w-xl text-[22px] font-bold leading-tight tracking-tight text-white sm:mt-3.5 sm:text-3xl">
               Siap membangun{" "}
               <span className="text-gradient">rumah pintar</span> Anda?
             </h2>
-            <p className="mx-auto mt-2 max-w-md text-sm leading-relaxed text-slate-400">
+            <p className="mx-auto mt-2 max-w-md text-[13px] leading-relaxed text-slate-400 sm:text-sm">
               Ceritakan tipe rumah, ruangan prioritas, dan budget Anda — kami
               susun rekomendasi perangkat, protokol, serta tahapan
               pemasangannya.
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+            <div className="mt-4 flex flex-wrap items-center justify-center gap-2.5 sm:mt-5 sm:gap-3">
               <a
                 href={`https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 px-6 py-3 text-sm font-semibold text-[#05070f] transition hover:shadow-xl hover:shadow-emerald-500/30"
+                className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-emerald-400 to-teal-500 px-5 py-2.5 text-[13px] font-semibold text-[#05070f] transition hover:shadow-xl hover:shadow-emerald-500/30 sm:px-6 sm:py-3 sm:text-sm"
               >
                 <MessageCircle className="size-4" />
                 Chat via WhatsApp
@@ -52,14 +54,14 @@ export default function Kontak({ onNavigate }) {
               </a>
               <a
                 href="mailto:halo@nexahome.id"
-                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white transition hover:border-cyan-400/40 hover:bg-white/5"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[13px] font-semibold text-white transition hover:border-cyan-400/40 hover:bg-white/5 sm:px-6 sm:py-3 sm:text-sm"
               >
                 <Mail className="size-4" />
                 Kirim Email
               </a>
             </div>
 
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-[11px] text-slate-500">
+            <div className="mt-3.5 flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[10.5px] text-slate-500 sm:mt-4 sm:gap-x-5 sm:text-[11px]">
               <a
                 href="tel:+6281200000000"
                 className="flex items-center gap-1.5 transition hover:text-cyan-300"
@@ -79,8 +81,8 @@ export default function Kontak({ onNavigate }) {
           </div>
         </div>
 
-        <footer className="animate-fade-up-delay-1 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-5 py-4">
-          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs">
+        <footer className="animate-fade-up-delay-1 w-full rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3 sm:px-5 sm:py-4 [@media(max-height:700px)]:hidden">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1.5 text-[11px] sm:gap-x-5 sm:text-xs">
             {[
               { id: "beranda", label: "Beranda" },
               { id: "perangkat", label: "Perangkat" },

@@ -34,25 +34,25 @@ export default function Hero({ onNavigate }) {
         <div className="absolute bottom-[-100px] right-[-120px] h-[300px] w-[300px] rounded-full bg-violet-600/15 blur-[110px]" />
       </div>
 
-      <div className="relative mx-auto grid min-h-full w-full max-w-7xl content-center gap-8 px-5 py-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
+      <div className="relative mx-auto grid min-h-full w-full max-w-7xl content-center gap-6 px-4 py-4 sm:px-5 sm:py-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
         <div className="animate-fade-up-delay-1 flex flex-col items-center text-center lg:items-start lg:text-left">
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-4 py-1.5 text-xs font-medium text-cyan-300">
+          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-400/25 bg-cyan-400/10 px-3.5 py-1.5 text-[11px] font-medium text-cyan-300 sm:text-xs">
             <Sparkles className="size-3.5" />
             Teknologi Rumah Modern &middot; Era IoT 2026
           </div>
 
-          <h1 className="mt-4 text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-4xl lg:text-[2.7rem]">
+          <h1 className="mt-3 text-[27px] font-bold leading-[1.1] tracking-tight text-white sm:mt-4 sm:text-4xl lg:text-[2.7rem]">
             Ubah Rumah Biasa Menjadi{" "}
             <span className="text-gradient">Rumah Pintar</span> Masa Depan
           </h1>
 
-          <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
+          <p className="mt-2.5 max-w-xl text-[13px] leading-relaxed text-slate-400 sm:mt-3 sm:text-base lg:line-clamp-none line-clamp-3">
             Perangkat, protokol, ekosistem, anggaran, hingga checklist keamanan
             — panduan lengkap membangun smart home modern dari lampu pintar
             sampai otomatisasi penuh.
           </p>
 
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-3 sm:mt-5 lg:justify-start">
             <button
               onClick={() => onNavigate("perangkat")}
               className="group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-cyan-400 to-blue-600 px-6 py-3 text-sm font-semibold text-[#05070f] transition hover:shadow-xl hover:shadow-cyan-500/30"
@@ -68,7 +68,7 @@ export default function Hero({ onNavigate }) {
             </button>
           </div>
 
-          <div className="mt-6 grid w-full max-w-xl grid-cols-2 gap-2.5 sm:grid-cols-4">
+          <div className="mt-4 grid w-full max-w-xl grid-cols-2 gap-2.5 sm:mt-6 sm:grid-cols-4">
             {quickStats.map((s) => (
               <button
                 key={s.label}

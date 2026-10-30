@@ -60,9 +60,11 @@ const platforms = [
 export default function Ekosistem() {
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="absolute right-[-180px] top-1/3 h-[340px] w-[340px] rounded-full bg-emerald-500/10 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute right-[-180px] top-1/3 h-[340px] w-[340px] rounded-full bg-emerald-500/10 blur-[130px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-4 px-4 py-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-3 px-4 py-4 sm:gap-4 sm:py-6 lg:gap-3 lg:py-3 lg:px-8">
         <SectionHeading
           eyebrow="Ekosistem Platform"
           title={
@@ -74,11 +76,11 @@ export default function Ekosistem() {
           description="Platform adalah tempat semua perangkat bertemu. Yang terbaik adalah yang sesuai dengan ponsel, kebiasaan, dan tingkat kenyamanan teknis Anda."
         />
 
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3.5 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0">
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-3.5 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {platforms.map((p, i) => (
             <div
               key={p.name}
-              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 lg:w-auto"
+              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto lg:p-3.5"
               style={{ animation: `fade-up 0.45s ease-out ${i * 55}ms both` }}
             >
               <div className="flex items-center gap-2.5">
@@ -90,7 +92,7 @@ export default function Ekosistem() {
                   <p className="text-[10.5px] text-slate-500">{p.tagline}</p>
                 </div>
               </div>
-              <p className="mt-2.5 flex-1 text-[11.5px] leading-relaxed text-slate-400 line-clamp-4">
+              <p className="mt-2.5 flex-1 text-[11.5px] leading-relaxed text-slate-400 line-clamp-3">
                 {p.desc}
               </p>
               <div className="mt-2.5 flex flex-wrap gap-1.5">
@@ -103,7 +105,7 @@ export default function Ekosistem() {
                   </span>
                 ))}
               </div>
-              <p className="mt-2.5 border-t border-white/[0.06] pt-2 text-[10.5px] leading-relaxed text-slate-500">
+              <p className="mt-2.5 border-t border-white/[0.06] pt-2 text-[10.5px] leading-relaxed text-slate-500 line-clamp-2">
                 <span className="text-slate-400">Cocok untuk: </span>
                 {p.fit}
               </p>
@@ -111,7 +113,7 @@ export default function Ekosistem() {
           ))}
 
           <div
-            className="relative flex w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 lg:w-auto"
+            className="relative flex w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 sm:w-auto"
             style={{ animation: "fade-up 0.45s ease-out 280ms both" }}
           >
             <div className="flex items-center gap-2">
@@ -143,7 +145,7 @@ export default function Ekosistem() {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-slate-600 lg:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
           Geser kartu untuk melihat platform lainnya &rarr;
         </p>
       </div>

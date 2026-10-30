@@ -113,10 +113,12 @@ export default function HowItWorks() {
 
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_55%_at_50%_50%,black,transparent)]" />
-      <div className="absolute left-1/2 top-1/2 h-[300px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_60%_55%_at_50%_50%,black,transparent)]" />
+        <div className="absolute left-1/2 top-1/2 h-[300px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-500/10 blur-[120px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-4 px-4 py-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-3 px-4 py-4 sm:gap-4 sm:py-6 lg:px-8">
         <SectionHeading
           eyebrow="Panduan Membangun"
           title={
@@ -149,11 +151,11 @@ export default function HowItWorks() {
         </div>
 
         {mode === "langkah" && (
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-4 lg:gap-4 lg:overflow-visible lg:px-0">
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-4">
             {steps.map((s, i) => (
               <div
                 key={s.step}
-                className="glass group relative flex w-[70%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-[46%] lg:w-auto"
+                className="glass group relative flex w-[70%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
                 style={{ animation: `fade-up 0.45s ease-out ${i * 70}ms both` }}
               >
                 <div className="flex items-center justify-between">
@@ -174,11 +176,11 @@ export default function HowItWorks() {
         )}
 
         {mode === "ruangan" && (
-          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0">
+          <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3">
             {rooms.map((r, i) => (
               <div
                 key={r.name}
-                className="glass group flex w-[72%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-[44%] lg:w-auto"
+                className="glass group flex w-[72%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
                 style={{ animation: `fade-up 0.4s ease-out ${i * 50}ms both` }}
               >
                 <div className="flex items-center gap-3">
@@ -262,7 +264,7 @@ export default function HowItWorks() {
           </div>
         )}
 
-        <p className="text-center text-[11px] text-slate-600 lg:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
           {mode === "checklist" ? "Ketuk poin untuk menandai progres" : "Geser kartu untuk melihat lainnya →"}
         </p>
       </div>

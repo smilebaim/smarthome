@@ -296,21 +296,31 @@ const devices = [
   },
 ];
 
-const PAGE_SIZE = 8;
+const PAGE_SIZE_DESKTOP = 8;
+const PAGE_SIZE_TABLET = 6;
 
 export default function Devices() {
   const [active, setActive] = useState("semua");
   const [page, setPage] = useState(0);
   const [detail, setDetail] = useState(null);
+  const [perPage, setPerPage] = useState(PAGE_SIZE_DESKTOP);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1024px)");
+    const apply = () => setPerPage(mq.matches ? PAGE_SIZE_DESKTOP : PAGE_SIZE_TABLET);
+    apply();
+    mq.addEventListener("change", apply);
+    return () => mq.removeEventListener("change", apply);
+  }, []);
 
   const filtered = useMemo(
     () => (active === "semua" ? devices : devices.filter((d) => d.cat === active)),
     [active],
   );
 
-  const pages = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
+  const pages = Math.max(1, Math.ceil(filtered.length / perPage));
   const currentPage = Math.min(page, pages - 1);
-  const visible = filtered.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
+  const visible = filtered.slice(currentPage * perPage, (currentPage + 1) * perPage);
 
   const changeCategory = (key) => {
     setActive(key);
@@ -326,9 +336,11 @@ export default function Devices() {
 
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="absolute left-[-200px] top-1/3 h-[360px] w-[360px] rounded-full bg-blue-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute left-[-200px] top-1/3 h-[360px] w-[360px] rounded-full bg-blue-600/10 blur-[130px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-3.5 px-4 py-5 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-2 px-4 py-3 sm:gap-3.5 sm:py-6 lg:px-8">
         <SectionHeading
           eyebrow="Katalog Perangkat"
           title={
@@ -340,13 +352,13 @@ export default function Devices() {
           description="20 perangkat paling sering dipakai — lengkap dengan kisaran harga, kebutuhan daya, dan cara pemasangan."
         />
 
-        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 lg:mx-0 lg:flex-wrap lg:justify-center lg:overflow-visible lg:px-0">
+        <div className="no-scrollbar -mx-4 flex gap-2 overflow-x-auto px-4 pb-0.5 sm:mx-0 sm:flex-wrap sm:justify-center sm:overflow-visible sm:px-0">
           {categories.map((c) => (
             <button
               key={c.key}
               onClick={() => changeCategory(c.key)}
               aria-pressed={active === c.key}
-              className={`shrink-0 rounded-full px-3.5 py-1.5 text-xs font-medium transition ${
+              className={`shrink-0 rounded-full px-3.5 py-1 text-xs font-medium transition sm:py-1.5 ${
                 active === c.key
                   ? "bg-gradient-to-r from-cyan-400 to-blue-600 text-[#05070f] shadow-lg shadow-cyan-500/25"
                   : "border border-white/10 bg-white/[0.03] text-slate-300 hover:border-cyan-400/30 hover:text-white"
@@ -358,12 +370,12 @@ export default function Devices() {
         </div>
 
         {/* Mobile: swipe carousel */}
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 lg:hidden">
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:hidden">
           {filtered.map((d, i) => (
             <button
               key={d.name}
               onClick={() => setDetail(d)}
-              className="glass group relative flex w-[78%] shrink-0 snap-center flex-col rounded-2xl p-4 text-left transition active:scale-[0.99]"
+              className="glass group relative flex w-[78%] shrink-0 snap-center flex-col rounded-2xl p-3 text-left transition active:scale-[0.99] sm:p-4"
               style={{ animation: `fade-up 0.4s ease-out ${Math.min(i, 8) * 45}ms both` }}
             >
               <div className="flex items-start justify-between gap-2">
@@ -392,9 +404,9 @@ export default function Devices() {
           ))}
         </div>
 
-        {/* Desktop: paginated grid */}
-        <div className="hidden lg:block">
-          <div className="grid grid-cols-4 gap-3">
+        {/* Tablet & desktop: paginated grid */}
+        <div className="hidden sm:block">
+          <div className="grid grid-cols-2 gap-3 lg:grid-cols-4">
             {visible.map((d, i) => (
               <button
                 key={d.name}
@@ -431,8 +443,8 @@ export default function Devices() {
 
           <div className="mt-3 flex items-center justify-between">
             <span className="text-[11px] text-slate-500">
-              Menampilkan {currentPage * PAGE_SIZE + 1}–
-              {Math.min((currentPage + 1) * PAGE_SIZE, filtered.length)} dari {filtered.length} perangkat
+              Menampilkan {currentPage * perPage + 1}–
+              {Math.min((currentPage + 1) * perPage, filtered.length)} dari {filtered.length} perangkat
             </span>
             <div className="flex items-center gap-1.5">
               <button
@@ -470,7 +482,7 @@ export default function Devices() {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-slate-600 lg:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
           Geser kartu, ketuk untuk melihat detail &rarr;
         </p>
       </div>

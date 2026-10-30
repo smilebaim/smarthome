@@ -47,9 +47,11 @@ const protocols = [
 export default function Protocols() {
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="absolute right-[-180px] top-1/4 h-[340px] w-[340px] rounded-full bg-violet-600/10 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute right-[-180px] top-1/4 h-[340px] w-[340px] rounded-full bg-violet-600/10 blur-[130px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-5 px-4 py-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-3 px-4 py-4 sm:gap-4 sm:py-6 lg:px-8">
         <SectionHeading
           eyebrow="Protokol Jaringan"
           title={
@@ -61,11 +63,11 @@ export default function Protocols() {
           description="Rumah pintar modern memadukan beberapa protokol sekaligus — masing-masing punya peran. Pahami sebelum membeli perangkat pertama Anda."
         />
 
-        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-4 overflow-x-auto px-4 pb-1 lg:mx-0 lg:grid lg:snap-none lg:grid-cols-3 lg:gap-4 lg:overflow-visible lg:px-0">
+        <div className="no-scrollbar -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3">
           {protocols.map((p, i) => (
             <div
               key={p.name}
-              className="glass group flex w-[80%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 lg:w-auto"
+              className="glass group flex w-[80%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto"
               style={{ animation: `fade-up 0.45s ease-out ${i * 55}ms both` }}
             >
               <div className="flex items-center gap-3">
@@ -96,7 +98,7 @@ export default function Protocols() {
           ))}
 
           <div
-            className="relative flex w-[80%] shrink-0 snap-center flex-col justify-center overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 lg:w-auto"
+            className="relative flex w-[80%] shrink-0 snap-center flex-col justify-center overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 sm:w-auto"
             style={{ animation: "fade-up 0.45s ease-out 300ms both" }}
           >
             <h3 className="text-base font-semibold text-white">
@@ -116,7 +118,7 @@ export default function Protocols() {
           </div>
         </div>
 
-        <p className="text-center text-[11px] text-slate-600 lg:hidden">
+        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:700px)]:hidden">
           Geser kartu untuk melihat lainnya &rarr;
         </p>
       </div>

@@ -51,6 +51,10 @@ const shots = [
   { name: "preview-desktop-anggaran", url: "/#anggaran", vw: 1440, vh: 900 },
   { name: "preview-desktop-faq", url: "/#faq", vw: 1440, vh: 900 },
   { name: "preview-desktop-kontak", url: "/#kontak", vw: 1440, vh: 900 },
+  { name: "preview-tablet-perangkat", url: "/#perangkat", vw: 768, vh: 1024 },
+  { name: "preview-tablet-fitur", url: "/#fitur", vw: 768, vh: 1024 },
+  { name: "preview-laptop-1280", url: "/#perangkat", vw: 1280, vh: 720 },
+  { name: "preview-mobile-360", url: "/", vw: 360, vh: 640, mobile: true },
   { name: "preview-mobile", url: "/", vw: 390, vh: 844, mobile: true },
   { name: "preview-mobile-perangkat", url: "/#perangkat", vw: 390, vh: 844, mobile: true },
   {

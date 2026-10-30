@@ -154,7 +154,7 @@ body {
   }
 }
 .animate-page-in {
-  animation: page-in 0.35s ease-out both;
+  animation: page-in 0.35s ease-out backwards;
 }
 
 @keyframes modal-in {

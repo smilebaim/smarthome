@@ -29,7 +29,7 @@ export default function MobileNav({ active, onNavigate, onOpenMenu }) {
                 isMenu ? onOpenMenu() : onNavigate(it.id)
               }
               aria-current={isActive ? "page" : undefined}
-              className="flex flex-col items-center gap-1 py-2.5"
+              className="flex flex-col items-center gap-0.5 py-2 sm:gap-1 sm:py-2.5"
             >
               <span
                 className={`relative grid size-8 place-items-center rounded-lg transition ${

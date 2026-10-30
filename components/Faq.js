@@ -48,9 +48,11 @@ export default function Faq({ onNavigate }) {
 
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="absolute right-[-160px] top-1/4 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[130px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute right-[-160px] top-1/4 h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[130px]" />
+      </div>
 
-      <div className="relative mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-4 px-4 py-6 lg:px-8">
+      <div className="relative mx-auto flex min-h-full w-full max-w-5xl flex-col justify-center gap-3 px-4 py-4 sm:gap-4 sm:py-6 lg:px-8">
         <SectionHeading
           eyebrow="Pertanyaan Umum"
           title={
@@ -62,7 +64,7 @@ export default function Faq({ onNavigate }) {
           description="Jawaban singkat untuk keraguan yang paling umum sebelum memulai — dari renovasi hingga keamanan data."
         />
 
-        <div className="grid items-start gap-1.5 sm:grid-cols-2 sm:gap-2">
+        <div className="grid items-start gap-1 sm:grid-cols-2 sm:gap-2">
           {faqs.map((f, i) => {
             const isOpen = open === i;
             return (
@@ -78,7 +80,7 @@ export default function Faq({ onNavigate }) {
                 <button
                   onClick={() => setOpen(isOpen ? -1 : i)}
                   aria-expanded={isOpen}
-                  className="flex w-full items-center justify-between gap-3 px-3.5 py-2 text-left sm:py-2.5"
+                  className="flex w-full items-center justify-between gap-3 px-3 py-1.5 text-left sm:py-2.5"
                 >
                   <span className="flex items-start gap-2 text-[11.5px] font-medium leading-snug text-white">
                     <HelpCircle className="mt-0.5 size-3.5 shrink-0 text-cyan-400/70" />
@@ -100,7 +102,7 @@ export default function Faq({ onNavigate }) {
           })}
         </div>
 
-        <div className="flex flex-col items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-2.5 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-3.5 py-2 sm:flex-row [@media(max-height:700px)]:hidden">
           <p className="text-[11px] text-slate-500">
             Pertanyaan Anda belum ada di daftar?
           </p>

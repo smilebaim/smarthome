@@ -20,13 +20,13 @@ export default function Navbar({ active, onNavigate }) {
         <button
           onClick={() => onNavigate("beranda")}
           className="flex shrink-0 items-center gap-2.5 rounded-xl transition active:opacity-75"
-          aria-label="NexaHome — kembali ke beranda"
+          aria-label="SmileHome — kembali ke beranda"
         >
           <span className="grid size-8 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-violet-600 shadow-lg shadow-cyan-500/25 sm:size-9">
             <House className="size-4 text-[#05070f] sm:size-4.5" strokeWidth={2.5} />
           </span>
           <span className="text-[15px] font-semibold tracking-tight text-white sm:text-base">
-            Nexa<span className="text-gradient">Home</span>
+            Smile<span className="text-gradient">Home</span>
           </span>
         </button>
 

@@ -10,7 +10,7 @@ import {
 
 const WA_NUMBER = "6281200000000";
 const WA_TEXT = encodeURIComponent(
-  "Halo NexaHome, saya ingin konsultasi membangun smart home.",
+  "Halo SmileHome, saya ingin konsultasi membangun smart home.",
 );
 
 export default function Kontak({ onNavigate }) {
@@ -53,7 +53,7 @@ export default function Kontak({ onNavigate }) {
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
               <a
-                href="mailto:halo@nexahome.id"
+                href="mailto:halo@smilehome.id"
                 className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[13px] font-semibold text-white transition hover:border-cyan-400/40 hover:bg-white/5 sm:px-6 sm:py-3 sm:text-sm"
               >
                 <Mail className="size-4" />
@@ -69,7 +69,7 @@ export default function Kontak({ onNavigate }) {
                 <Phone className="size-3" /> +62 812-0000-0000
               </a>
               <span className="flex items-center gap-1.5">
-                <Mail className="size-3" /> halo@nexahome.id
+                <Mail className="size-3" /> halo@smilehome.id
               </span>
               <span className="flex items-center gap-1.5">
                 <Clock className="size-3" /> Dibalas &lt; 1 hari kerja
@@ -106,7 +106,7 @@ export default function Kontak({ onNavigate }) {
             <span className="text-slate-600">Syarat &amp; Ketentuan</span>
           </div>
           <p className="mt-2.5 text-center text-[11px] text-slate-600">
-            &copy; 2026 NexaHome. Dibangun dengan Next.js &amp; Tailwind CSS.
+            &copy; 2026 SmileHome. Dibangun dengan Next.js &amp; Tailwind CSS.
           </p>
         </footer>
       </div>

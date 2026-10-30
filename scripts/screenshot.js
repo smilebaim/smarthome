@@ -1,4 +1,4 @@
-/* Screenshot + fit check helper untuk verifikasi tampilan NexaHome */
+/* Screenshot + fit check helper untuk verifikasi tampilan SmileHome */
 const puppeteer = require("puppeteer-core");
 const path = require("path");
 

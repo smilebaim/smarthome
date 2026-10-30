@@ -1,4 +1,4 @@
-# NexaHome — Teknologi Rumah Pintar Modern
+# SmileHome — Teknologi Rumah Pintar Modern
 
 Website showcase konsep teknologi smart home modern: perangkat pintar untuk membangun rumah cerdas, protokol jaringan (Wi-Fi, Zigbee, Z-Wave, Matter/Thread, Bluetooth), ekosistem platform, perkiraan anggaran, dan panduan membangun rumah pintar langkah demi langkah.
 

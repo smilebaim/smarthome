@@ -21,7 +21,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "NexaHome — Teknologi Rumah Pintar Modern",
+  title: "SmileHome — Teknologi Rumah Pintar Modern",
   description:
     "Panduan lengkap membangun smart home modern: perangkat pintar, protokol Zigbee/Z-Wave/Matter, otomatisasi, keamanan 24/7, dan efisiensi energi dalam satu aplikasi.",
   keywords: [
@@ -35,7 +35,7 @@ export const metadata = {
     "perangkat pintar",
   ],
   openGraph: {
-    title: "NexaHome — Teknologi Rumah Pintar Modern",
+    title: "SmileHome — Teknologi Rumah Pintar Modern",
     description:
       "Perangkat, protokol, dan langkah membangun rumah pintar masa depan.",
     type: "website",

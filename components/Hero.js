@@ -10,31 +10,29 @@ import {
   Check,
   Wifi,
   Sparkles,
+  Cpu,
+  Globe,
+  Wallet,
+  ChevronRight,
 } from "lucide-react";
 
 const quickStats = [
-  { icon: Lightbulb, value: "15+", label: "Jenis Perangkat", tone: "text-amber-300" },
-  { icon: Wifi, value: "5", label: "Protokol Standar", tone: "text-cyan-300" },
-  { icon: ShieldCheck, value: "24/7", label: "Monitoring Real-Time", tone: "text-emerald-300" },
-  { icon: Leaf, value: "30%", label: "Potensi Hemat Energi", tone: "text-lime-300" },
+  { icon: Cpu, value: "20", label: "Jenis Perangkat", tone: "text-cyan-300", target: "perangkat" },
+  { icon: Globe, value: "5", label: "Ekosistem Platform", tone: "text-violet-300", target: "ekosistem" },
+  { icon: Wallet, value: "3", label: "Paket Anggaran", tone: "text-amber-300", target: "anggaran" },
+  { icon: Leaf, value: "30%", label: "Potensi Hemat Energi", tone: "text-lime-300", target: "panduan" },
 ];
 
-const energyBars = [
-  "h-6",
-  "h-10",
-  "h-8",
-  "h-14",
-  "h-11",
-  "h-16",
-  "h-7",
-];
+const energyBars = ["h-6", "h-10", "h-8", "h-14", "h-11", "h-16", "h-7"];
 
 export default function Hero({ onNavigate }) {
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
-      <div className="absolute -top-32 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[130px]" />
-      <div className="absolute bottom-[-100px] right-[-120px] h-[300px] w-[300px] rounded-full bg-violet-600/15 blur-[110px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_40%,black,transparent)]" />
+        <div className="absolute -top-32 left-1/2 h-[380px] w-[720px] -translate-x-1/2 rounded-full bg-cyan-500/15 blur-[130px]" />
+        <div className="absolute bottom-[-100px] right-[-120px] h-[300px] w-[300px] rounded-full bg-violet-600/15 blur-[110px]" />
+      </div>
 
       <div className="relative mx-auto grid min-h-full w-full max-w-7xl content-center gap-8 px-5 py-6 lg:grid-cols-2 lg:items-center lg:gap-12 lg:px-8">
         <div className="animate-fade-up-delay-1 flex flex-col items-center text-center lg:items-start lg:text-left">
@@ -49,9 +47,9 @@ export default function Hero({ onNavigate }) {
           </h1>
 
           <p className="mt-3 max-w-xl text-sm leading-relaxed text-slate-400 sm:text-base">
-            Kenali perangkat, protokol, dan langkah membangun smart home
-            modern — dari lampu pintar dan kunci digital hingga otomatisasi
-            penuh yang dikendalikan dari ujung jari Anda.
+            Perangkat, protokol, ekosistem, anggaran, hingga checklist keamanan
+            — panduan lengkap membangun smart home modern dari lampu pintar
+            sampai otomatisasi penuh.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -72,15 +70,25 @@ export default function Hero({ onNavigate }) {
 
           <div className="mt-6 grid w-full max-w-xl grid-cols-2 gap-2.5 sm:grid-cols-4">
             {quickStats.map((s) => (
-              <div key={s.label} className="glass rounded-xl px-3 py-2.5 text-left">
-                <div className="flex items-center gap-2">
-                  <s.icon className={`size-4 ${s.tone}`} />
-                  <span className="text-lg font-bold text-white">{s.value}</span>
+              <button
+                key={s.label}
+                onClick={() => onNavigate(s.target)}
+                className="glass group rounded-xl px-3 py-2.5 text-left transition hover:border-cyan-400/30"
+                aria-label={`${s.value} ${s.label} — buka halaman`}
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <s.icon className={`size-4 ${s.tone}`} />
+                    <span className="text-lg font-bold text-white">
+                      {s.value}
+                    </span>
+                  </div>
+                  <ChevronRight className="size-3.5 text-slate-600 transition group-hover:translate-x-0.5 group-hover:text-cyan-300" />
                 </div>
                 <p className="mt-0.5 text-[10px] leading-tight text-slate-500">
                   {s.label}
                 </p>
-              </div>
+              </button>
             ))}
           </div>
         </div>

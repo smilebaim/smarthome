@@ -1,18 +1,21 @@
 # NexaHome — Teknologi Rumah Pintar Modern
 
-Website showcase konsep teknologi smart home modern: perangkat pintar untuk membangun rumah cerdas, protokol jaringan (Wi-Fi, Zigbee, Z-Wave, Matter/Thread, Bluetooth), dan panduan membangun rumah pintar langkah demi langkah.
+Website showcase konsep teknologi smart home modern: perangkat pintar untuk membangun rumah cerdas, protokol jaringan (Wi-Fi, Zigbee, Z-Wave, Matter/Thread, Bluetooth), ekosistem platform, perkiraan anggaran, dan panduan membangun rumah pintar langkah demi langkah.
 
 Dibangun dengan [Next.js](https://nextjs.org) (App Router) + [Tailwind CSS](https://tailwindcss.com) + [lucide-react](https://lucide.dev).
 
 ## Fitur Halaman
 
-- **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll, navigasi via tab (desktop: navbar atas, mobile: menu bawah 6 item)
-- **Hero interaktif** — mockup dashboard kontrol rumah pintar dengan animasi
+- **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll (terverifikasi di 1440×900, 1366×768, dan 390×844), navigasi via tab (desktop: navbar atas 8 tab, mobile: menu bawah 6 item + sheet "Semua Halaman")
+- **Beranda interaktif** — mockup dashboard kontrol rumah pintar, kartu statistik yang bisa diklik menuju halaman terkait
 - **Keunggulan** — 6 manfaat utama smart home (karusel geser di mobile)
-- **Katalog 15 perangkat** — dengan filter kategori (Keamanan, Pencahayaan, Energi, Kontrol & Kenyamanan, Rumah Tangga)
+- **Katalog 20 perangkat** — filter 6 kategori (Keamanan, Pencahayaan, Energi & Iklim, Kontrol, Rumah Tangga, Infrastruktur), paginasi di desktop, serta modal detail berisi kisaran harga, daya, cara pemasangan, ruangan ideal, dan tips
 - **Protokol jaringan** — penjelasan Wi-Fi, Zigbee, Z-Wave, Matter/Thread, dan Bluetooth BLE
-- **Panduan 4 langkah** — dari audit rumah hingga otomasi penuh
-- **Kontak** — CTA konsultasi + tautan footer
+- **Ekosistem platform** — Google Home, Apple Home, Amazon Alexa, Home Assistant, dan SmartThings beserta rekomendasi pemilihan
+- **Panduan 3 mode** — langkah demi langkah, rekomendasi per ruangan (6 ruangan), dan checklist interaktif 8 poin dengan progres
+- **Paket anggaran** — 3 tingkatan (Starter / Comfort / Premium) dengan rincian isi, target tipe rumah, dan estimasi penghematan listrik
+- **FAQ** — 8 pertanyaan umum dalam akordeon
+- **Kontak** — CTA WhatsApp, email, telepon, dan tautan footer
 - Desain responsif, dark theme berteknologi, animasi masuk antar halaman
 
 ## Menjalankan Secara Lokal

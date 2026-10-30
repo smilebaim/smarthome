@@ -50,8 +50,10 @@ const features = [
 export default function Features() {
   return (
     <section className="no-scrollbar relative h-full overflow-y-auto">
-      <div className="absolute -top-24 right-[-160px] h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
-      <div className="absolute bottom-[-120px] left-[-140px] h-[280px] w-[280px] rounded-full bg-violet-600/10 blur-[110px]" />
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute -top-24 right-[-160px] h-[320px] w-[320px] rounded-full bg-cyan-500/10 blur-[120px]" />
+        <div className="absolute bottom-[-120px] left-[-140px] h-[280px] w-[280px] rounded-full bg-violet-600/10 blur-[110px]" />
+      </div>
 
       <div className="relative mx-auto flex min-h-full w-full max-w-7xl flex-col justify-center gap-5 px-4 py-6 lg:px-8">
         <SectionHeading

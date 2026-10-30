@@ -337,7 +337,7 @@ export default function Devices() {
   }, [detail]);
 
   return (
-    <section className="no-scrollbar relative h-full overflow-y-auto">
+    <section className="no-scrollbar relative h-full overflow-y-auto overflow-x-hidden">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-200px] top-1/3 h-[360px] w-[360px] rounded-full bg-blue-600/10 blur-[130px]" />
       </div>
@@ -396,7 +396,7 @@ export default function Devices() {
               <h3 className="mt-2 text-[12.5px] font-semibold leading-snug text-white sm:mt-2.5 sm:text-[13.5px]">
                 {d.name}
               </h3>
-              <p className="mt-1 flex-1 text-[10px] leading-relaxed text-slate-400 line-clamp-2 sm:text-[11px] [@media(max-height:750px)]:hidden">
+              <p className="mt-1 flex-1 text-[10px] leading-relaxed text-slate-400 line-clamp-2 sm:text-[11px] [@media(max-height:750px)]:hidden hide-on-short-tablet">
                 {d.desc}
               </p>
               <div className="mt-2 flex items-center justify-between gap-1 border-t border-white/[0.06] pt-2 sm:mt-2.5">

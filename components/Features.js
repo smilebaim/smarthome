@@ -65,36 +65,33 @@ export default function Features() {
             </>
           }
           description="Rumah pintar modern menyatukan perangkat agar bekerja otomatis untuk kenyamanan, keamanan, dan penghematan Anda."
+          descriptionClassName="[@media(max-height:700px)]:hidden"
         />
 
-        <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-center gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-3 sm:items-stretch md:grid-cols-2 sm:gap-4 sm:overflow-visible sm:px-0 lg:grid-cols-3 lg:gap-5">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-4 lg:grid-cols-3 lg:gap-5">
           {features.map((f, i) => (
             <div
               key={f.title}
-              className="glass group relative flex w-[82%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto lg:p-5"
+              className="glass group relative flex flex-col overflow-hidden rounded-xl p-2.5 transition duration-300 hover:border-cyan-400/30 sm:rounded-2xl sm:p-4 lg:p-5"
               style={{ animation: `fade-up 0.5s ease-out ${i * 60}ms both` }}
             >
               <div
                 className={`pointer-events-none absolute -right-14 -top-14 size-36 rounded-full bg-gradient-to-br ${f.accent} opacity-0 blur-3xl transition duration-500 group-hover:opacity-20`}
               />
               <span
-                className={`relative grid size-11 place-items-center rounded-xl bg-gradient-to-br ${f.accent} shadow-lg`}
+                className={`relative grid size-8 place-items-center rounded-lg bg-gradient-to-br ${f.accent} shadow-lg sm:size-11 sm:rounded-xl`}
               >
-                <f.icon className="size-5 text-[#05070f]" strokeWidth={2} />
+                <f.icon className="size-4 text-[#05070f] sm:size-5" strokeWidth={2} />
               </span>
-              <h3 className="relative mt-4 text-base font-semibold text-white">
+              <h3 className="relative mt-2 text-[12.5px] font-semibold leading-snug text-white sm:mt-4 sm:text-base">
                 {f.title}
               </h3>
-              <p className="relative mt-2 text-xs leading-relaxed text-slate-400 lg:line-clamp-3">
+              <p className="relative mt-1 text-[10px] leading-relaxed text-slate-400 line-clamp-1 [@media(min-height:700px)]:line-clamp-2 sm:mt-2 sm:text-xs lg:line-clamp-3 [@media(max-height:600px)]:hidden">
                 {f.desc}
               </p>
             </div>
           ))}
         </div>
-
-        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:600px)]:hidden">
-          Geser kartu untuk melihat lainnya &rarr;
-        </p>
       </div>
     </section>
   );

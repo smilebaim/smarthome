@@ -151,6 +151,25 @@ body {
   display: none;
 }
 
+/* Tablet pendek (640–1023px, tinggi <=850px): ringkas detail sekunder agar muat satu layar */
+@media (min-width: 640px) and (max-width: 1023px) and (max-height: 850px) {
+  .hide-on-short-tablet {
+    display: none !important;
+  }
+  .show-on-short-tablet {
+    display: block !important;
+  }
+  .rooms-3col-short-tablet {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  .rooms-3col-short-tablet .room-name {
+    font-size: 13px !important;
+  }
+  .rooms-3col-short-tablet .room-note {
+    display: none !important;
+  }
+}
+
 /* Petunjuk visual bahwa kartu di kanan masih bisa digeser (hanya mobile) */
 @media (max-width: 639px) {
   .swipe-fade {

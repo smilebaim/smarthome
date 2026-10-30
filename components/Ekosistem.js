@@ -74,38 +74,39 @@ export default function Ekosistem() {
             </>
           }
           description="Platform adalah tempat semua perangkat bertemu. Yang terbaik adalah yang sesuai dengan ponsel, kebiasaan, dan tingkat kenyamanan teknis Anda."
+          descriptionClassName="[@media(max-height:700px)]:hidden"
         />
 
-        <div className="no-scrollbar swipe-fade -mx-4 flex snap-x snap-mandatory items-stretch gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 sm:mx-0 sm:grid sm:snap-none sm:grid-cols-3 sm:gap-3.5 md:grid-cols-2 sm:overflow-visible sm:px-0 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3.5 lg:grid-cols-3">
           {platforms.map((p, i) => (
             <div
               key={p.name}
-              className="glass group relative flex w-[84%] shrink-0 snap-center flex-col rounded-2xl p-4 transition duration-300 hover:border-cyan-400/30 sm:w-auto lg:p-3.5"
+              className="glass group relative flex flex-col rounded-xl p-2.5 transition duration-300 hover:border-cyan-400/30 sm:rounded-2xl sm:p-4 lg:p-3.5"
               style={{ animation: `fade-up 0.45s ease-out ${i * 55}ms both` }}
             >
-              <div className="flex items-center gap-2.5">
-                <span className="grid size-10 place-items-center rounded-xl border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40">
-                  <p.icon className={`size-5 ${p.accent}`} strokeWidth={1.8} />
+              <div className="flex items-center gap-2 sm:gap-2.5">
+                <span className="grid size-8 shrink-0 place-items-center rounded-lg border border-white/10 bg-white/[0.05] transition group-hover:border-cyan-400/40 sm:size-10 sm:rounded-xl">
+                  <p.icon className={`size-4 sm:size-5 ${p.accent}`} strokeWidth={1.8} />
                 </span>
-                <div>
-                  <h3 className="text-[15px] font-semibold text-white">{p.name}</h3>
-                  <p className="text-[10.5px] text-slate-500">{p.tagline}</p>
+                <div className="min-w-0">
+                  <h3 className="truncate text-[12.5px] font-semibold text-white sm:text-[15px]">{p.name}</h3>
+                  <p className="line-clamp-1 text-[9px] text-slate-500 sm:text-[10.5px]">{p.tagline}</p>
                 </div>
               </div>
-              <p className="mt-2.5 flex-1 text-[11.5px] leading-relaxed text-slate-400 lg:line-clamp-3">
+              <p className="mt-2 flex-1 text-[10px] leading-relaxed text-slate-400 line-clamp-2 sm:mt-2.5 sm:text-[11.5px] lg:line-clamp-3 [@media(max-height:650px)]:hidden">
                 {p.desc}
               </p>
-              <div className="mt-2.5 flex flex-wrap gap-1.5">
+              <div className="mt-2 flex flex-wrap gap-1 sm:mt-2.5 sm:gap-1.5 [@media(max-height:700px)]:hidden hide-on-short-tablet">
                 {p.chips.map((c) => (
                   <span
                     key={c}
-                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-[9.5px] font-medium text-slate-300"
+                    className="rounded-md border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-[9px] font-medium text-slate-300 sm:text-[9.5px]"
                   >
                     {c}
                   </span>
                 ))}
               </div>
-              <p className="mt-2.5 border-t border-white/[0.06] pt-2 text-[10.5px] leading-relaxed text-slate-500 [@media(max-height:600px)]:hidden lg:line-clamp-2">
+              <p className="mt-2 hidden border-t border-white/[0.06] pt-2 text-[9.5px] leading-relaxed text-slate-500 sm:block sm:mt-2.5 sm:text-[10.5px] lg:line-clamp-2 hide-on-short-tablet">
                 <span className="text-slate-400">Cocok untuk: </span>
                 {p.fit}
               </p>
@@ -113,18 +114,18 @@ export default function Ekosistem() {
           ))}
 
           <div
-            className="relative flex w-[84%] shrink-0 snap-center flex-col overflow-hidden rounded-2xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-4 sm:w-auto"
+            className="relative flex flex-col overflow-hidden rounded-xl border border-cyan-400/25 bg-gradient-to-br from-cyan-500/10 via-transparent to-violet-600/10 p-3 sm:rounded-2xl sm:p-4"
             style={{ animation: "fade-up 0.45s ease-out 280ms both" }}
           >
             <div className="flex items-center gap-2">
-              <span className="grid size-8 place-items-center rounded-lg bg-cyan-400/15">
-                <Sparkles className="size-4 text-cyan-300" />
+              <span className="grid size-7 place-items-center rounded-lg bg-cyan-400/15 sm:size-8">
+                <Sparkles className="size-3.5 text-cyan-300 sm:size-4" />
               </span>
-              <h3 className="text-[15px] font-semibold text-white">
+              <h3 className="text-[12.5px] font-semibold text-white sm:text-[15px]">
                 Bingung memilih?
               </h3>
             </div>
-            <ul className="mt-3 flex flex-col gap-2 text-[11px] leading-relaxed text-slate-300">
+            <ul className="mt-2 flex flex-col gap-1.5 text-[10px] leading-relaxed text-slate-300 sm:mt-3 sm:gap-2 sm:text-[11px]">
               {[
                 "Pakai iPhone? Mulai dari Apple Home.",
                 "Ingin serba lokal tanpa cloud? Home Assistant.",
@@ -136,7 +137,7 @@ export default function Ekosistem() {
                 </li>
               ))}
             </ul>
-            <p className="mt-auto pt-3 text-[10.5px] leading-relaxed text-slate-400">
+            <p className="mt-auto hidden pt-3 text-[10.5px] leading-relaxed text-slate-400 sm:block">
               Kabar baiknya: berkat{" "}
               <span className="font-semibold text-amber-300">Matter</span>,
               perangkat yang sama bisa dipakai di lebih dari satu platform —
@@ -144,10 +145,6 @@ export default function Ekosistem() {
             </p>
           </div>
         </div>
-
-        <p className="text-center text-[11px] text-slate-600 sm:hidden [@media(max-height:600px)]:hidden">
-          Geser kartu untuk melihat platform lainnya &rarr;
-        </p>
       </div>
     </section>
   );

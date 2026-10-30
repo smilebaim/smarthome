@@ -23,45 +23,45 @@ const withBust = (url) => {
 
 const shots = [
   { name: "preview-desktop", url: "/", vw: 1440, vh: 900 },
-  { name: "preview-desktop-perangkat", url: "/#perangkat", vw: 1440, vh: 900 },
+  { name: "preview-desktop-perangkat", url: "/perangkat", vw: 1440, vh: 900 },
   {
     name: "preview-desktop-perangkat-detail",
-    url: "/#perangkat",
+    url: "/perangkat",
     vw: 1440,
     vh: 900,
     action: clickText("Smart Hub"),
   },
-  { name: "preview-desktop-protokol", url: "/#protokol", vw: 1440, vh: 900 },
-  { name: "preview-desktop-ekosistem", url: "/#ekosistem", vw: 1440, vh: 900 },
-  { name: "preview-desktop-panduan", url: "/#panduan", vw: 1440, vh: 900 },
+  { name: "preview-desktop-protokol", url: "/protokol", vw: 1440, vh: 900 },
+  { name: "preview-desktop-ekosistem", url: "/ekosistem", vw: 1440, vh: 900 },
+  { name: "preview-desktop-panduan", url: "/panduan", vw: 1440, vh: 900 },
   {
     name: "preview-desktop-panduan-ruangan",
-    url: "/#panduan",
+    url: "/panduan",
     vw: 1440,
     vh: 900,
     action: clickText("Per Ruangan"),
   },
   {
     name: "preview-desktop-panduan-checklist",
-    url: "/#panduan",
+    url: "/panduan",
     vw: 1440,
     vh: 900,
     action: clickText("Checklist"),
   },
-  { name: "preview-desktop-anggaran", url: "/#anggaran", vw: 1440, vh: 900 },
-  { name: "preview-desktop-faq", url: "/#faq", vw: 1440, vh: 900 },
-  { name: "preview-desktop-kontak", url: "/#kontak", vw: 1440, vh: 900 },
-  { name: "preview-tablet-perangkat", url: "/#perangkat", vw: 768, vh: 1024 },
-  { name: "preview-tablet-fitur", url: "/#fitur", vw: 768, vh: 1024 },
-  { name: "preview-laptop-1280", url: "/#perangkat", vw: 1280, vh: 720 },
+  { name: "preview-desktop-anggaran", url: "/anggaran", vw: 1440, vh: 900 },
+  { name: "preview-desktop-faq", url: "/faq", vw: 1440, vh: 900 },
+  { name: "preview-desktop-kontak", url: "/kontak", vw: 1440, vh: 900 },
+  { name: "preview-tablet-perangkat", url: "/perangkat", vw: 768, vh: 1024 },
+  { name: "preview-tablet-fitur", url: "/fitur", vw: 768, vh: 1024 },
+  { name: "preview-laptop-1280", url: "/perangkat", vw: 1280, vh: 720 },
   { name: "preview-mobile-360", url: "/", vw: 360, vh: 640, mobile: true },
   { name: "preview-mobile-320", url: "/", vw: 320, vh: 568, mobile: true },
-  { name: "preview-mobile-430", url: "/#perangkat", vw: 430, vh: 932, mobile: true },
+  { name: "preview-mobile-430", url: "/perangkat", vw: 430, vh: 932, mobile: true },
   { name: "preview-mobile", url: "/", vw: 390, vh: 844, mobile: true },
-  { name: "preview-mobile-perangkat", url: "/#perangkat", vw: 390, vh: 844, mobile: true },
+  { name: "preview-mobile-perangkat", url: "/perangkat", vw: 390, vh: 844, mobile: true },
   {
     name: "preview-mobile-perangkat-detail",
-    url: "/#perangkat",
+    url: "/perangkat",
     vw: 390,
     vh: 844,
     mobile: true,
@@ -75,13 +75,23 @@ const shots = [
     mobile: true,
     action: clickText("Menu"),
   },
-  { name: "preview-mobile-panduan", url: "/#panduan", vw: 390, vh: 844, mobile: true },
-  { name: "preview-mobile-anggaran", url: "/#anggaran", vw: 390, vh: 844, mobile: true },
-  { name: "preview-mobile-faq", url: "/#faq", vw: 390, vh: 844, mobile: true },
-  { name: "preview-mobile-kontak", url: "/#kontak", vw: 390, vh: 844, mobile: true },
+  { name: "preview-mobile-panduan", url: "/panduan", vw: 390, vh: 844, mobile: true },
+  { name: "preview-mobile-anggaran", url: "/anggaran", vw: 390, vh: 844, mobile: true },
+  { name: "preview-mobile-faq", url: "/faq", vw: 390, vh: 844, mobile: true },
+  { name: "preview-mobile-kontak", url: "/kontak", vw: 390, vh: 844, mobile: true },
 ];
 
-const pages = ["beranda", "fitur", "perangkat", "protokol", "ekosistem", "panduan", "anggaran", "faq", "kontak"];
+const pages = {
+  beranda: "/",
+  fitur: "/fitur",
+  perangkat: "/perangkat",
+  protokol: "/protokol",
+  ekosistem: "/ekosistem",
+  panduan: "/panduan",
+  anggaran: "/anggaran",
+  faq: "/faq",
+  kontak: "/kontak",
+};
 
 (async () => {
   const browser = await puppeteer.launch({
@@ -119,8 +129,8 @@ const pages = ["beranda", "fitur", "perangkat", "protokol", "ekosistem", "pandua
       isMobile: !!vp.mobile,
       hasTouch: !!vp.mobile,
     });
-    for (const id of pages) {
-      await page.goto(withBust(`/#${id}`), { waitUntil: "networkidle0" });
+    for (const [id, path] of Object.entries(pages)) {
+      await page.goto(withBust(path), { waitUntil: "networkidle0" });
       await new Promise((r) => setTimeout(r, 450));
       const m = await page.evaluate(() => {
         const sec = document.querySelector("main section");

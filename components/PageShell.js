@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Navbar from "./Navbar";
 import MobileNav from "./MobileNav";
 import MobileMenuSheet from "./MobileMenuSheet";
@@ -13,51 +14,25 @@ import HowItWorks from "./HowItWorks";
 import Anggaran from "./Anggaran";
 import Faq from "./Faq";
 import Kontak from "./Kontak";
+import { PAGE_IDS, pagePath } from "@/lib/pages";
 
-const PAGE_IDS = [
-  "beranda",
-  "fitur",
-  "perangkat",
-  "protokol",
-  "ekosistem",
-  "panduan",
-  "anggaran",
-  "faq",
-  "kontak",
-];
-
-const PAGE_TITLES = {
-  beranda: "NexaHome — Teknologi Rumah Pintar Modern",
-  fitur: "Keunggulan — NexaHome",
-  perangkat: "Katalog Perangkat — NexaHome",
-  protokol: "Protokol Jaringan — NexaHome",
-  ekosistem: "Ekosistem Platform — NexaHome",
-  panduan: "Panduan Membangun — NexaHome",
-  anggaran: "Paket Anggaran — NexaHome",
-  faq: "FAQ — NexaHome",
-  kontak: "Kontak — NexaHome",
-};
-
-export default function PageShell() {
-  const [active, setActive] = useState("beranda");
+export default function PageShell({ initialPage = "beranda" }) {
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
+  const active = initialPage;
 
+  // Kompatibilitas tautan lama berbasis hash: /#perangkat -> /perangkat
   useEffect(() => {
-    const fromHash = () => {
-      const h = window.location.hash.replace("#", "");
-      if (PAGE_IDS.includes(h)) setActive(h);
-    };
-    fromHash();
-    window.addEventListener("hashchange", fromHash);
-    return () => window.removeEventListener("hashchange", fromHash);
-  }, []);
+    const h = window.location.hash.replace("#", "");
+    if (!h || !PAGE_IDS.includes(h)) return;
+    const target = pagePath(h);
+    if (window.location.pathname !== target) router.replace(target);
+  }, [router]);
 
   const navigate = (id) => {
     if (!PAGE_IDS.includes(id)) return;
-    setActive(id);
     setMenuOpen(false);
-    history.replaceState(null, "", id === "beranda" ? "#" : `#${id}`);
-    document.title = PAGE_TITLES[id] || "NexaHome";
+    router.push(pagePath(id));
   };
 
   const pages = {

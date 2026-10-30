@@ -4,6 +4,24 @@ Website showcase konsep teknologi smart home modern: perangkat pintar untuk memb
 
 Dibangun dengan [Next.js](https://nextjs.org) (App Router) + [Tailwind CSS](https://tailwindcss.com) + [lucide-react](https://lucide.dev).
 
+## Routing
+
+Setiap halaman adalah route App Router sungguhan (SSG) dengan metadata judul/deskripsi sendiri, jadi bisa dibagikan lewat URL langsung:
+
+| Route | Halaman |
+|---|---|
+| `/` | Beranda |
+| `/fitur` | Keunggulan |
+| `/perangkat` | Katalog perangkat |
+| `/protokol` | Protokol jaringan |
+| `/ekosistem` | Ekosistem platform |
+| `/panduan` | Panduan 3 mode |
+| `/anggaran` | Paket anggaran |
+| `/faq` | FAQ |
+| `/kontak` | Kontak |
+
+Navigasi tab (navbar/menu bawah) memakai `router.push`, dan tautan lama berbasis hash (`/#perangkat`) otomatis diarahkan ke route-nya.
+
 ## Fitur Halaman
 
 - **Layout ala aplikasi** — setiap halaman tampil satu layar penuh tanpa scroll (tanpa overflow di 320×568 hingga 1920×1080; pada posisi landscape konten dapat digulir), navigasi via tab (desktop: navbar atas 8 tab, mobile: menu bawah 6 item + sheet "Semua Halaman")
